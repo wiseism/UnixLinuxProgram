@@ -4,11 +4,11 @@
  **		uses fork, exec, wait, and ignores signals
  **/
 
-#include	<stdio.h>
-#include	<stdlib.h>
-#include	<unistd.h>
-#include	<signal.h>
-#include	"smsh.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+#include "smsh.h"
 
 #define	DFL_PROMPT	"> "
 

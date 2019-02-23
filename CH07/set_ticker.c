@@ -1,6 +1,6 @@
-#include	<stdio.h>
-#include        <sys/time.h>
-#include        <signal.h>
+#include <stdio.h>
+#include <sys/time.h>
+#include <signal.h>
 
 /*
  *      set_ticker.c
@@ -13,7 +13,7 @@
  */
 
 
-set_ticker( n_msecs )
+int set_ticker( n_msecs )
 {
         struct itimerval new_timeset;
         long    n_sec, n_usecs;

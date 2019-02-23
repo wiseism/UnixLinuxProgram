@@ -7,6 +7,7 @@
 #include        <utmp.h>
 #include        <fcntl.h>
 #include        <time.h>
+#include <stdlib.h>
 
 /* #define      SHOWHOST */
 

@@ -24,6 +24,7 @@ static  int     num_recs;                               /* num stored   */
 static  int     cur_rec;                                /* next to go   */
 static  int     fd_utmp = -1;                           /* read from    */
 
+int utmp_reload();
 utmp_open( char *filename )
 {
         fd_utmp = open( filename, O_RDONLY );           /* open it      */

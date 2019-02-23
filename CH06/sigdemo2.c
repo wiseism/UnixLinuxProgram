@@ -2,10 +2,11 @@
  *            - press Ctrl-\ to kill this one
  */
 
-#include	<stdio.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <signal.h>
+#include <zconf.h>
 
-main()
+void main()
 {
 	signal( SIGINT, SIG_IGN );
 

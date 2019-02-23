@@ -2,10 +2,13 @@
  */
 
 #include	<stdio.h>
+#include <zconf.h>
+#include <stdlib.h>
+#include <sys/wait.h>
 
 #define	DELAY	2
 
-main()
+void main()
 {
 	int  newpid;
 	void child_code(), parent_code();

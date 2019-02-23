@@ -2,10 +2,11 @@
  *                note: calls "env" to display its new settings
  */
 #include	<stdio.h>
+#include <zconf.h>
 
 extern char ** environ;
 
-main()
+void main()
 {
 	char *table[3];
 

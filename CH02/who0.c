@@ -1,14 +1,15 @@
-#include	<stdio.h>
-#include	<fcntl.h>
-#include	<utmp.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <utmp.h>
+#include <stdlib.h>
+#include <zconf.h>
 
 /*
  *	who version 0
  *		main outline but no substance
  */
 
-int
-main()
+int main()
 {
         int         fd;                 /* for file des of utmp */
         struct utmp current_record;     /* hold info from file */

@@ -10,9 +10,9 @@
  *	build:   cc bounce2d.c set_ticker.c -lcurses -o bounce2d
  */
 
-#include	<curses.h>
-#include	<signal.h>
-#include	"bounce.h"
+#include <curses.h>
+#include <signal.h>
+#include "bounce.h"
 
 struct ppball the_ball ;
 

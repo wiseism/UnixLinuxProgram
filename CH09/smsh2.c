@@ -2,12 +2,13 @@
  **		small shell that supports command line parsing
  **		and if..then..else.fi logic (by calling process())
  **/
-#include	<stdio.h>
-#include	<stdlib.h>
-#include	<unistd.h>
-#include	<signal.h>
-#include	<sys/wait.h>
-#include	"smsh.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <signal.h>
+#include <sys/wait.h>
+#include "smsh.h"
 
 #define	DFL_PROMPT	"> "
 

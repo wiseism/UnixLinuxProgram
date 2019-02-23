@@ -2,10 +2,11 @@
  *	purpose	 using refresh and sleep for animated effects
  *	outline	 initialize, draw stuff, wrap up
  */
-#include	<stdio.h>
-#include	<curses.h>
+#include <stdio.h>
+#include <curses.h>
+#include <zconf.h>
 
-main()
+void main()
 {
 	int	i;
 

@@ -3,10 +3,11 @@
  *   shows how to read attributes from driver and test a bit
  */
 
-#include        <stdio.h>
-#include        <termios.h>
+#include <stdio.h>
+#include <termios.h>
+#include <stdlib.h>
 
-main()
+void main()
 {
         struct termios info;
         int rv;

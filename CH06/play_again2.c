@@ -6,12 +6,16 @@
  *	 better: timeout if user walks away
  *	
  */
-#include	<stdio.h>
-#include	<termios.h>
+#include <stdio.h>
+#include <termios.h>
 
 #define	QUESTION	"Do you want another transaction"
 
-main()
+void set_cr_noecho_mode();
+int tty_mode(int how);
+int get_response(char *question);
+
+int main()
 {
 	int	response;
 
@@ -40,7 +44,8 @@ int get_response(char *question)
 		}
 	}
 }
-set_cr_noecho_mode()
+
+void set_cr_noecho_mode()
 /* 
  * purpose: put file descriptor 0 into chr-by-chr mode and noecho mode
  *  method: use bits in termios
@@ -56,7 +61,7 @@ set_cr_noecho_mode()
 }
 
 /* how == 0 => save current mode,  how == 1 => restore mode */
-tty_mode(int how)
+int tty_mode(int how)
 {
 	static struct termios original_mode;
 	if ( how == 0 )

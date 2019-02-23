@@ -6,7 +6,7 @@
 #include	<stdio.h>
 #include	<curses.h>
 
-main()
+void main()
 {
 	initscr() ;		/* turn on curses	*/
 

@@ -4,6 +4,7 @@
  *    if_state and if_result
  */
 #include	<stdio.h>
+#include <memory.h>
 #include	"smsh.h"
 
 enum states   { NEUTRAL, WANT_THEN, THEN_BLOCK };

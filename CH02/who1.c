@@ -5,6 +5,7 @@
 #include	<utmp.h>
 #include	<fcntl.h>
 #include	<unistd.h>
+#include <stdlib.h>
 
 #define	SHOWHOST	/* include remote machine on output */
 

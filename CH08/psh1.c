@@ -4,12 +4,16 @@
  *		Uses execvp(), and never returns.
  */
 
-#include	<stdio.h>
-#include	<signal.h>
-#include	<string.h>
+#include <stdio.h>
+#include <signal.h>
+#include <string.h>
+#include <zconf.h>
+#include <stdlib.h>
 
 #define	MAXARGS		20				/* cmdline args	*/
 #define	ARGLEN		100				/* token length	*/
+
+int execute( char *arglist[] );
 
 int main()
 {

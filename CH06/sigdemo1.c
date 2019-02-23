@@ -2,10 +2,12 @@
  *            - run this and press Ctrl-C a few times
  */
 
-#include	<stdio.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <signal.h>
+#include <stdio.h>
+#include <zconf.h>
 
-main()
+void main()
 {
 	void	f(int);			/* declare the handler	*/
 	int	i;

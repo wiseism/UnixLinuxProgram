@@ -4,10 +4,12 @@
  *		keyboard sends SIGIO, main only calls pause()
  *	compile	cc bounce_async.c set_ticker.c -lcurses -o bounce_async
  */
-#include	<stdio.h>
-#include	<curses.h>
-#include	<signal.h>
-#include	<fcntl.h>
+#include <stdio.h>
+#include <curses.h>
+#include <signal.h>
+#include <fcntl.h>
+#include <zconf.h>
+#include <memory.h>
 
 /* The state of the game */
 
@@ -20,7 +22,7 @@ int	dir   =  1;	/* where we are going	*/
 int	delay = 200;	/* how long to wait	*/
 int	done  = 0;
 
-main()
+void main()
 {
 	void	on_alarm(int);	/* handler for alarm	*/
 	void	on_input(int);	/* handler for keybd    */

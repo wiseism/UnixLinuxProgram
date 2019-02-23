@@ -8,10 +8,13 @@
  *
  *      bug: prints an empty string if run from "/"
  **/
-#include	<stdio.h>
-#include	<sys/types.h>
-#include	<sys/stat.h>
-#include	<dirent.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <dirent.h>
+#include <zconf.h>
+#include <stdlib.h>
+#include <memory.h>
 
 ino_t	get_inode(char *);
 void    printpathto(ino_t);

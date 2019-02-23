@@ -1,7 +1,9 @@
 /* exec1.c - shows how easy it is for a program to run a program
  */
+#include <stdio.h>
+#include <zconf.h>
 
-main()
+void main()
 {
 	char	*arglist[3];
 

@@ -3,12 +3,13 @@
  *    compile  cc hello5.c -lcurses -o hello5
  */
 #include	<curses.h>
+#include <zconf.h>
 
 #define	LEFTEDGE	10
 #define	RIGHTEDGE	30
 #define	ROW		10
 
-main()
+void main()
 {
 	char	message[] = "Hello";
 	char	blank[]   = "     ";

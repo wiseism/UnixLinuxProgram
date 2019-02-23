@@ -10,7 +10,7 @@
 #include	<stdio.h>
 #include	<fcntl.h>
 
-main( int ac, char *av[] )
+void main( int ac, char *av[] )
 {
 	int	fd;
 	char	buf[BUFSIZ];

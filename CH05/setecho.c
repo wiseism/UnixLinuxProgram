@@ -5,10 +5,11 @@
 
 #include        <stdio.h>
 #include        <termios.h>
+#include <stdlib.h>
 
 #define  oops(s,x) { perror(s); exit(x); }
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
         struct termios info;
 

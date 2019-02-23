@@ -4,8 +4,8 @@
  *                        does not reset ^C handler, so two kill
  */
 
-#include	<stdio.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <signal.h>
 #define	INPUTLEN	100
 
 main()

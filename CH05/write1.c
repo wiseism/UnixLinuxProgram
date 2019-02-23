@@ -11,7 +11,7 @@
  *        usage: write1 username
  */
 
-main( int ac, char *av[] )
+void main( int ac, char *av[] )
 {
 	int	fd;
 	char	buf[BUFSIZ];

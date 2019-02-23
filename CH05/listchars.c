@@ -5,9 +5,9 @@
  *        notes: usesful to show that buffering/editing exists
  */
 
-#include        <stdio.h>
+#include <stdio.h>
 
-main()
+void main()
 {
         int     c, n = 0;
 

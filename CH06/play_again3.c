@@ -10,13 +10,19 @@
 #include	<termios.h>
 #include	<fcntl.h>
 #include	<string.h>
+#include <ctype.h>
 
 #define	ASK		"Do you want another transaction"
 #define	TRIES	   3	                                   /* max tries */
 #define SLEEPTIME  2                                       /* time per try */
 #define	BEEP       putchar('\a')                           /* alert user */
 
-main()
+void tty_mode(int how);
+void set_cr_noecho_mode();
+void set_nodelay_mode();
+int get_response( char *question , int maxtries);
+
+int main()
 {
 	int	response;
 
@@ -27,7 +33,8 @@ main()
 	tty_mode(1);				/* restore orig mode	*/
 	return response;
 }
-get_response( char *question , int maxtries)
+
+int get_response( char *question , int maxtries)
 /*
  * purpose: ask a question and wait for a y/n answer or maxtries
  *  method: use getchar and complain about non-y/n input
@@ -53,7 +60,7 @@ get_response( char *question , int maxtries)
 /*
  *  skip over non-legal chars and return y,Y,n,N or EOF
  */
-get_ok_char()
+int get_ok_char()
 {
 	int c;
 	while( ( c = getchar() ) != EOF && strchr("yYnN",c) == NULL )
@@ -61,7 +68,7 @@ get_ok_char()
 	return c;
 }
 
-set_cr_noecho_mode()
+void set_cr_noecho_mode()
 /* 
  * purpose: put file descriptor 0 into chr-by-chr mode and noecho mode
  *  method: use bits in termios
@@ -76,7 +83,7 @@ set_cr_noecho_mode()
 	tcsetattr( 0 , TCSANOW, &ttystate);	/* install settings	*/
 }
 
-set_nodelay_mode()
+void set_nodelay_mode()
 /*
  * purpose: put file descriptor 0 into no-delay mode
  *  method: use fcntl to set bits
@@ -90,10 +97,11 @@ set_nodelay_mode()
 	fcntl(0, F_SETFL, termflags);		/* and install 'em	*/
 }
 
+
 /* how == 0 => save current mode,  how == 1 => restore mode */
 /* this version handles termios and fcntl flags             */
 
-tty_mode(int how)
+void tty_mode(int how)
 {
 	static struct termios original_mode;
 	static int            original_flags;

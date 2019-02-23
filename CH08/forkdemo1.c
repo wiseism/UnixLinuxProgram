@@ -3,9 +3,10 @@
  *	by the different return values from fork()
  */
 
-#include	<stdio.h>
+#include <stdio.h>
+#include <zconf.h>
 
-main()
+void main()
 {
 	int	ret_from_fork, mypid;
 

@@ -2,11 +2,11 @@
  * contains the switch and the functions for builtin commands
  */
 
-#include	<stdio.h>
-#include	<string.h>
-#include	<ctype.h>
-#include	"smsh.h"
-#include	"varlib.h"
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include "smsh.h"
+#include "varlib.h"
 
 int assign(char *);
 int okname(char *);

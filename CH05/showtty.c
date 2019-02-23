@@ -4,8 +4,13 @@
 
 #include	<stdio.h>
 #include	<termios.h>
+#include <stdlib.h>
 
-main()
+void showbaud( int thespeed );
+void show_some_flags( struct termios *ttyp );
+void show_flagset( int thevalue, struct flaginfo thebitnames[] );
+
+void main()
 {
 	struct	termios ttyinfo;	/* this struct holds tty info */
 						
@@ -14,7 +19,7 @@ main()
 		exit(1);
 	}
 						/* show info */
-	showbaud ( cfgetospeed( &ttyinfo ) );	/* get + show baud rate	*/
+	showbaud(cfgetospeed( &ttyinfo ) );	/* get + show baud rate	*/
 	printf("The erase character is ascii %d, Ctrl-%c\n",
 			ttyinfo.c_cc[VERASE], ttyinfo.c_cc[VERASE]-1+'A');
 	printf("The line kill character is ascii %d, Ctrl-%c\n",
@@ -23,7 +28,7 @@ main()
 	show_some_flags( &ttyinfo );		/* show misc. flags	*/
 }
 
-showbaud( int thespeed )
+void showbaud( int thespeed )
 /*
  *	prints the speed in english
  */
@@ -68,7 +73,7 @@ struct flaginfo local_flags[] = {
 		ECHOK	,	"Echo KILL by starting new line",
 		0	,	NULL };
 
-show_some_flags( struct termios *ttyp )
+void show_some_flags( struct termios *ttyp )
 /*
  *	show the values of two of the flag sets_: c_iflag and c_lflag
  *	adding c_oflag and c_cflag is pretty routine - just add new

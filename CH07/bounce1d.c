@@ -4,9 +4,10 @@
  *		the main program reads keyboard input
  *	compile	cc bounce1d.c set_ticker.c -lcurses -o bounce1d
  */
-#include	<stdio.h>
-#include	<curses.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <curses.h>
+#include <signal.h>
+#include <memory.h>
 
 /* some global settings main and the handler use */
 

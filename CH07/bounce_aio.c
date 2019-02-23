@@ -4,10 +4,12 @@
  *		keyboard sends SIGIO, main only calls pause()
  *	compile cc bounce_aio.c set_ticker.c -lrt  -lcurses -o bounce_aio
  */
-#include	<stdio.h>
-#include	<curses.h>
-#include	<signal.h>
-#include	<aio.h>
+#include <stdio.h>
+#include <curses.h>
+#include <signal.h>
+#include <aio.h>
+#include <zconf.h>
+#include <memory.h>
 
 /* The state of the game 			*/
 
@@ -22,10 +24,10 @@ int	done  = 0;
 
 struct aiocb kbcbuf;	/* an aio control buf   */
 
-main()
+void main()
 {
-	void	on_alarm(int);	/* handler for alarm	*/
-	void	on_input(int);	/* handler for keybd    */
+	void	on_alarm();	/* handler for alarm	*/
+	void	on_input();	/* handler for keybd    */
 	void	setup_aio_buffer();
 
 	initscr();		/* set up screen */

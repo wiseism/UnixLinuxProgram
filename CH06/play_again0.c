@@ -4,8 +4,8 @@
  *	returns: 0=>yes, 1=>no
  *	 better: eliminate need to press return 
  */
-#include	<stdio.h>
-#include	<termios.h>
+#include <stdio.h>
+#include <termios.h>
 
 #define	QUESTION	"Do you want another transaction"
 

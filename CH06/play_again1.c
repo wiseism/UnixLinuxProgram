@@ -4,12 +4,16 @@
  *	returns: 0=>yes, 1=>no
  *	 better: do no echo inappropriate input
  */
-#include	<stdio.h>
-#include	<termios.h>
+#include <stdio.h>
+#include <termios.h>
 
 #define	QUESTION	"Do you want another transaction"
 
-main()
+int tty_mode(int how);
+void set_crmode();
+int get_response(char *question);
+
+int main()
 {
 	int	response;
 
@@ -19,6 +23,7 @@ main()
 	tty_mode(1);				/* restore tty mode	*/
 	return response;
 }
+
 int get_response(char *question)
 /*
  * purpose: ask a question and wait for a y/n answer
@@ -42,7 +47,7 @@ int get_response(char *question)
 	}
 }
 
-set_crmode()
+void set_crmode()
 /* 
  * purpose: put file descriptor 0 (i.e. stdin) into chr-by-chr mode
  *  method: use bits in termios
@@ -57,7 +62,7 @@ set_crmode()
 }
 
 /* how == 0 => save current mode,  how == 1 => restore mode */
-tty_mode(int how)
+int tty_mode(int how)
 {
 	static struct termios original_mode;
 	if ( how == 0 )

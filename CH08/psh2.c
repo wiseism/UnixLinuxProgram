@@ -6,13 +6,18 @@
  **		New problem: shell catches signals.  Run vi, press ^c.
  **/
 
-#include	<stdio.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <signal.h>
+#include <zconf.h>
+#include <stdlib.h>
+#include <memory.h>
 
 #define	MAXARGS		20				/* cmdline args	*/
 #define	ARGLEN		100				/* token length	*/
 
-main()
+execute( char *arglist[] );
+
+int main()
 {
 	char	*arglist[MAXARGS+1];		/* an array of ptrs	*/
 	int	numargs;			/* index into array	*/

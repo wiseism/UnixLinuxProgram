@@ -6,12 +6,14 @@
  *      question4: what happens to read() when a signal arrives?
  */
 
-#include	<stdio.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <signal.h>
+#include <zconf.h>
+#include <memory.h>
 
 #define	INPUTLEN	100
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	void	inthandler(int);
 	void	quithandler(int);

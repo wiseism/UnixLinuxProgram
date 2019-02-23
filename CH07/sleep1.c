@@ -3,11 +3,12 @@
  *	usage	sleep1
  *	outline	sets handler, sets alarm, pauses, then returns
  */
-#include	<stdio.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <signal.h>
+#include <zconf.h>
 // #define	SHHHH
 
-main()
+void main()
 {
 	void	wakeup(int);
 

@@ -5,6 +5,8 @@
 #include	<utmp.h>
 #include	<fcntl.h>
 #include	<unistd.h>
+#include <stdlib.h>
+#include "who1bot.c"
 
 #define	SHOWHOST	/* include remote machine on output */
 

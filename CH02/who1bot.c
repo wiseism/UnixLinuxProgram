@@ -3,6 +3,9 @@
  *	displays contents of the utmp struct in human readable form
  *	*note* these sizes should not be hardwired
  */
+
+#include <stdio.h>
+
 show_info( struct utmp *utbufp )
 {
 	printf("%-8.8s", utbufp->ut_name);	/* the logname	*/

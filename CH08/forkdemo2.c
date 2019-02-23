@@ -1,9 +1,12 @@
+#include <zconf.h>
+#include <caca_conio.h>
+
 /* forkdemo2.c - shows how child processes pick up at the return
  *               from fork() and can execute any code they like,
  *               even fork().  Predict number of lines of output.
  */
 
-main()
+void main()
 {
 	printf("my pid is %d\n", getpid() );
 	fork();

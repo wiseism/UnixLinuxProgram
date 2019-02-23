@@ -3,7 +3,7 @@
 
 extern char	**environ;    /* points to the array of strings */
 
-main()
+void main()
 {
 	int	i;
 

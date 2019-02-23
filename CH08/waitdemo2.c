@@ -2,10 +2,13 @@
  */
 
 #include	<stdio.h>
+#include <zconf.h>
+#include <stdlib.h>
+#include <sys/wait.h>
 
 #define	DELAY	5
 
-main()
+void main()
 {
 	int  newpid;
 	void child_code(), parent_code();
@@ -19,6 +22,7 @@ main()
 	else
 		parent_code(newpid);
 }
+
 /*
  * new process takes a nap and then exits
  */
@@ -29,6 +33,7 @@ void child_code(int delay)
 	printf("child done. about to exit\n");
 	exit(17);
 }
+
 /*
  * parent waits for child then prints a message
  */

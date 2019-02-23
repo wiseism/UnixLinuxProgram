@@ -3,9 +3,13 @@
  *    signals, which are in turn caught and used to count down
  */
 
-#include	<stdio.h>
-#include        <sys/time.h>
-#include        <signal.h>
+#include <stdio.h>
+#include <sys/time.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <zconf.h>
+
+int set_ticker( int n_msecs );
 
 int main()
 {

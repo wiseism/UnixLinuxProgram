@@ -3,9 +3,10 @@
  *                it is a child or process
  */
 
-#include	<stdio.h>
+#include <stdio.h>
+#include <zconf.h>
 
-main()
+void main()
 {
 	int	fork_rv;
 
