@@ -5,7 +5,7 @@
 
 #define	NUM	5
 
-main()
+void main()
 {
 	pthread_t t1, t2;		/* two threads */
 

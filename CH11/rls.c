@@ -10,7 +10,7 @@
 #define        oops(msg)       { perror(msg); exit(1); }
 #define		PORTNUM		15000
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	struct sockaddr_in  servadd;        /* the number to call */
 	struct hostent      *hp;            /* used to get number */

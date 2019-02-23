@@ -6,11 +6,26 @@
 #include <stdio.h>
 #include <sys/file.h>
 #include <fcntl.h>
+#include <stdlib.h>
+#include <zconf.h>
 
 #define  oops(m,x)  { perror(m); exit(x); }
 #define  BUFLEN 10
 
-main(int ac, char *av[])
+lock_operation(int fd, int op)
+{
+    struct flock lock;
+
+    lock.l_whence = SEEK_SET;
+    lock.l_start = lock.l_len = 0;
+    lock.l_pid = getpid();
+    lock.l_type = op;
+
+    if ( fcntl(fd, F_SETLKW, &lock) == -1 )
+    oops("lock operation", 6);
+}
+
+void main(int ac, char *av[])
 {
 	int	fd, nread;
 	char	buf[BUFLEN];
@@ -33,15 +48,4 @@ main(int ac, char *av[])
 	close(fd);
 }
 
-lock_operation(int fd, int op)
-{
-	struct flock lock;
 
-	lock.l_whence = SEEK_SET;
-	lock.l_start = lock.l_len = 0;
-	lock.l_pid = getpid();
-	lock.l_type = op;
-
-	if ( fcntl(fd, F_SETLKW, &lock) == -1 )
-		oops("lock operation", 6);
-}

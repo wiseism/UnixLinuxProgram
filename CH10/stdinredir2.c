@@ -2,13 +2,15 @@
  * 	shows two more methods for redirecting standard input
  *	use #define to set one or the other
  */
-#include	<stdio.h>
-#include	<fcntl.h>
+#include <stdio.h>
+#include <fcntl.h>
+#include <stdlib.h>
+#include <zconf.h>
 
 /* #define	CLOSE_DUP		/* open, close, dup, close */
 /* #define	USE_DUP2	/* open, dup2, close */
 
-main()
+void main()
 {
 	int	fd ;
 	int	newfd;

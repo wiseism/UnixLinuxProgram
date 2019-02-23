@@ -7,11 +7,12 @@
 #include	<sys/types.h>
 #include	<sys/socket.h>
 #include	<sys/un.h>
+#include <stdlib.h>
 
 #define	SOCKET	"/tmp/logfilesock"
 #define	oops(m,x) { perror(m); exit(x); }
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	int	           sock;
 	struct sockaddr_un addr;

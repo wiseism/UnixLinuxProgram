@@ -4,6 +4,7 @@
 #include  <stdio.h>
 #include  <pthread.h>
 #include  <ctype.h>
+#include <stdlib.h>
 
 int	        total_words ;    /* the counter and its lock */
 pthread_mutex_t counter_lock = PTHREAD_MUTEX_INITIALIZER;

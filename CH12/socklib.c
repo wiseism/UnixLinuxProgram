@@ -13,14 +13,14 @@
  *					or -1 if error
  */ 
 
-#include	<stdio.h>
-#include	<unistd.h>
-#include	<sys/types.h>
-#include	<sys/socket.h>
-#include	<netinet/in.h>
-#include	<netdb.h>
-#include	<time.h>
-#include	<strings.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <netdb.h>
+#include <time.h>
+#include <strings.h>
 
 #define   HOSTLEN  256
 #define	  BACKLOG  1

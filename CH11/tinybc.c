@@ -23,10 +23,14 @@
  **                     * note: does not handle multiline answers
  **/
 #include	<stdio.h>
+#include <zconf.h>
+#include <sys/wait.h>
 
 #define	oops(m,x)	{ perror(m); exit(x); }
 
-main()
+void be_dc(int in[2], int out[2]);
+
+void main()
 {
 	int	pid, todc[2], fromdc[2];	/* equipment	*/
 
@@ -47,7 +51,7 @@ main()
 	}
 }
 
-be_dc(int in[2], int out[2])
+void be_dc(int in[2], int out[2])
 /*
  *	set up stdin and stdout, then execl dc
  */
@@ -69,7 +73,7 @@ be_dc(int in[2], int out[2])
 	oops("Cannot run dc", 5);
 }
 
-be_bc(int todc[2], int fromdc[2])
+void be_bc(int todc[2], int fromdc[2])
 /*
  *	read from stdin and convert into to RPN, send down pipe
  *	then read from other pipe and print to user

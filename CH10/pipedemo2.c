@@ -3,12 +3,14 @@
  *		  but child also writes to the pipe
  */
 #include	<stdio.h>
+#include <zconf.h>
+#include <memory.h>
 
 #define	CHILD_MESS	"I want a cookie\n"
 #define	PAR_MESS	"testing..\n"
 #define	oops(m,x)	{ perror(m); exit(x); }
 
-main()
+void main()
 {
 	int	pipefd[2];		/* the pipe	*/
 	int	len;			/* for write	*/

@@ -3,10 +3,11 @@
 #include  <stdio.h>
 #include  <pthread.h>
 #include  <ctype.h>
+#include <stdlib.h>
 
 int	  total_words ;
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	pthread_t t1, t2;		/* two threads */
 	void	  *count_words(void *);

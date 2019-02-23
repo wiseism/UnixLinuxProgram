@@ -11,7 +11,7 @@
 
 #define  oops(m,x)  { perror(m); exit(x); }
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	int	fd;
 	time_t  now;

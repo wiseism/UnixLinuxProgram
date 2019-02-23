@@ -2,9 +2,13 @@
  *	purpose: show how to redirect output for another program
  *	   idea: fork, then in the child, redirect output, then exec
  */
-#include	<stdio.h>
+#include <stdio.h>
+#include <zconf.h>
+#include <stdlib.h>
+#include <fcntl.h>
+#include <sys/wait.h>
 
-main()
+void main()
 {
 	int	pid ;
 	int	fd;

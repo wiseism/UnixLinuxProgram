@@ -6,8 +6,8 @@
  *		   with all the standard functions
  *		3. you need to use pclose() when done
  */
-#include	<stdio.h>
-#include	<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {

@@ -6,6 +6,7 @@
 #include  <stdio.h>
 #include  <pthread.h>
 #include  <ctype.h>
+#include <stdlib.h>
 
 struct arg_set {		/* two values in one arg*/
 		char *fname;	/* file to examine	*/

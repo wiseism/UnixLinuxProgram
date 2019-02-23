@@ -8,11 +8,11 @@
  *	        nice to put screen handling in its own thread
  */
 
-#include	<stdio.h>
-#include	<curses.h>
-#include	<pthread.h>
-#include	<stdlib.h>
-#include	<unistd.h>
+#include <stdio.h>
+#include <curses.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 #define	MAXMSG	10		/* limit to number of strings	*/
 #define	TUNIT   20000		/* timeunits in microseconds */

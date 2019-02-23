@@ -9,10 +9,25 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
 
 #define oops(m,x) { perror(m); exit(x); }
 
-main(int ac, char *av[])
+showdata(char *fname, int fd)
+{
+    char buf[BUFSIZ];
+    int  n;
+
+    printf("%s: ", fname, n);
+    fflush(stdout);
+    n = read(fd, buf, BUFSIZ);
+    if ( n == -1 )
+    oops(fname,5);
+    write(1, buf, n);
+    write(1, "\n", 1);
+}
+
+void main(int ac, char *av[])
 {
 	int    fd1, fd2;           /* the fds to watch      */
 	struct timeval timeout;    /* how long to wait      */
@@ -57,16 +72,4 @@ main(int ac, char *av[])
 			printf("no input after %d seconds\n", atoi(av[3]));
 	}
 }
-showdata(char *fname, int fd)
-{
-	char buf[BUFSIZ];
-	int  n;
 
-	printf("%s: ", fname, n);
-	fflush(stdout);
-	n = read(fd, buf, BUFSIZ);
-	if ( n == -1 )
-		oops(fname,5);
-	write(1, buf, n);
-	write(1, "\n", 1);
-}

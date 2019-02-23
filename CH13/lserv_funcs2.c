@@ -11,6 +11,7 @@
 #include <netdb.h>
 #include <signal.h>
 #include <sys/errno.h>
+#include <zconf.h>
 
 #define SERVER_PORTNUM	2020		/* Our server's port number */
 #define MSGLEN		128		/* Size of our datagrams */

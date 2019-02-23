@@ -1,9 +1,11 @@
 /* hello_single.c - a single threaded hello world program */
 
 #include  <stdio.h>
+#include <zconf.h>
+
 #define	NUM	5
 
-main()
+void main()
 {
 	void	print_msg(char *);
 

@@ -6,13 +6,13 @@
  *		execls "sh" "-c" command
  *    todo: what about signal handling for child process?
  */
-#include	<stdio.h>
-#include	<signal.h>
+#include <stdio.h>
+#include <signal.h>
 
 #define	READ	0
 #define	WRITE	1
 
-main()
+void main()
 {
 	FILE	*fp;
 	char	buf[BUFSIZ];

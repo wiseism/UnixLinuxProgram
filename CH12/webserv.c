@@ -7,12 +7,14 @@
  *             has many other weaknesses, but is a good start
  *      build: cc webserv.c socklib.c -o webserv
  */
-#include	<stdio.h>
-#include	<sys/types.h>
-#include	<sys/stat.h>
-#include	<string.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <string.h>
+#include <stdlib.h>
+#include <sys/socket.h>
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	int 	sock, fd;
 	FILE	*fpin;

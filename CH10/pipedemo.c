@@ -5,8 +5,10 @@
  */
 #include	<stdio.h>
 #include	<unistd.h>
+#include <stdlib.h>
+#include <memory.h>
 
-main()
+void main()
 {
 	int	len, i, apipe[2];	/* two file descriptors */
 	char	buf[BUFSIZ];		/* for reading end	*/

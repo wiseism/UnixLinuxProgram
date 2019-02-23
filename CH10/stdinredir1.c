@@ -5,10 +5,13 @@
  *		 closes fd 0, opens a disk file, then reads in
  *		 three more lines from standard input
  */
-#include	<stdio.h>
-#include	<fcntl.h>
 
-main()
+#include <stdio.h>
+#include <fcntl.h>
+#include <zconf.h>
+#include <stdlib.h>
+
+void main()
 {
 	int	fd ;
 	char	line[100];

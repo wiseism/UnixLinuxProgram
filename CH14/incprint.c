@@ -2,12 +2,13 @@
 
 #include  <stdio.h>
 #include  <pthread.h>
+#include <zconf.h>
 
 #define	NUM	5
 
 int     counter = 0;
 
-main()
+void main()
 {
 	pthread_t t1;			/* one thread */
 	void	  *print_count(void *); /* its function */
@@ -21,6 +22,7 @@ main()
 
 	pthread_join(t1, NULL);
 }
+
 void *print_count(void *m)
 {
 	int i;

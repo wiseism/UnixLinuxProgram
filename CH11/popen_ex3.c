@@ -7,7 +7,7 @@
 
 #include	<stdio.h>
 
-main()
+void main()
 {
 	FILE	*fp;
 

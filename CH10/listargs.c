@@ -4,7 +4,7 @@
  */
 #include	<stdio.h>
 
-main( int ac, char *av[] )
+void main( int ac, char *av[] )
 {
 	int	i;
 
