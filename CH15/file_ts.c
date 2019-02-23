@@ -8,8 +8,24 @@
 #include <sys/file.h>
 #include <fcntl.h>
 #include <time.h>
+#include <stdlib.h>
+#include <zconf.h>
+#include <memory.h>
 
 #define  oops(m,x)  { perror(m); exit(x); }
+
+lock_operation(int fd, int op)
+{
+    struct flock lock;
+
+    lock.l_whence = SEEK_SET;
+    lock.l_start = lock.l_len = 0;
+    lock.l_pid = getpid();
+    lock.l_type = op;
+
+    if ( fcntl(fd, F_SETLKW, &lock) == -1 )
+    oops("lock operation", 6);
+}
 
 void main(int ac, char *av[])
 {
@@ -41,15 +57,4 @@ void main(int ac, char *av[])
 	}
 }
 
-lock_operation(int fd, int op)
-{
-	struct flock lock;
 
-	lock.l_whence = SEEK_SET;
-	lock.l_start = lock.l_len = 0;
-	lock.l_pid = getpid();
-	lock.l_type = op;
-
-	if ( fcntl(fd, F_SETLKW, &lock) == -1 )
-		oops("lock operation", 6);
-}

@@ -13,7 +13,7 @@ int  see_more();
 
 int main( int ac , char *av[] )
 {
-	FILE	*fp;
+	FILE *fp;
 
 	if ( ac == 1 ){
 		do_more( stdin );

@@ -1,8 +1,8 @@
 /* shm_tc.c : the time client using shared memory, a bizarre application  */
 
-#include	<stdio.h>
-#include	<sys/shm.h>
-#include	<time.h>
+#include <stdio.h>
+#include <sys/shm.h>
+#include <time.h>
 
 #define	TIME_MEM_KEY	99		/* kind of like a port number */
 #define	SEG_SIZE	((size_t)100)		/* size of segment	*/

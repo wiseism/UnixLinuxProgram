@@ -97,8 +97,6 @@ add_executable(logfilec CH13/logfilec.c)
 add_executable(logfiled CH13/logfiled.c)
 add_executable(lserv1 CH13/lserv1.c)
 add_executable(lserv2 CH13/lserv2.c)
-#add_executable(lserv_funcs1 CH13/lserv_funcs1.c)
-#add_executable(lserv_funcs2 CH13/lserv_funcs2.c)
 
 add_executable(hello_multi CH14/hello_multi.c)
 add_executable(hello_single CH14/hello_single.c)

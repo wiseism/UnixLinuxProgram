@@ -13,7 +13,7 @@
 
 #define oops(m,x) { perror(m); exit(x); }
 
-showdata(char *fname, int fd)
+void showdata(char *fname, int fd)
 {
     char buf[BUFSIZ];
     int  n;
