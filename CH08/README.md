@@ -33,3 +33,12 @@ done waiting for 5064. Wait returned: 5064
 status: exit=17, sig=0, core=0
 
 ```
+
+
+execl, execlp, execle, execv, execvp, execvpe - execute a file
+
+getpid, getppid - get process identification
+
+fork, wait, waitpid - basic process management
+
+sleep - delay for a specified amount of time:
