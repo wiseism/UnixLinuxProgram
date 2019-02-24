@@ -9,6 +9,27 @@
  *		main outline but no substance
  */
 
+
+/**
+ * who1bot.c 不知道如何引入show_info函数
+ *
+ */
+#include <stdio.h>
+
+show_info( struct utmp *utbufp )
+{
+        printf("%-8.8s", utbufp->ut_name);	/* the logname	*/
+        printf(" ");				/* a space	*/
+        printf("%-8.8s", utbufp->ut_line);	/* the tty	*/
+        printf(" ");				/* a space	*/
+        printf("%10ld", utbufp->ut_time);	/* login time	*/
+        printf(" ");				/* a space	*/
+#ifdef	SHOWHOST
+        printf("(%s)", utbufp->ut_host);	/* the host	*/
+#endif
+        printf("\n");				/* newline	*/
+}
+
 int main()
 {
         int         fd;                 /* for file des of utmp */

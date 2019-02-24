@@ -4,10 +4,11 @@
  *	note     uses stat and pwd.h and grp.h 
  *	BUG: try ls2 /tmp  
  */
-#include	<stdio.h>
-#include	<sys/types.h>
-#include	<dirent.h>
-#include	<sys/stat.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <memory.h>
 
 void do_ls(char[]);
 void dostat(char *);
@@ -16,7 +17,7 @@ void mode_to_letters( int , char [] );
 char *uid_to_name( uid_t );
 char *gid_to_name( gid_t );
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	if ( ac == 1 )
 		do_ls( "." );

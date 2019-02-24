@@ -6,9 +6,9 @@
 #include	<termios.h>
 #include <stdlib.h>
 
-void showbaud( int thespeed );
-void show_some_flags( struct termios *ttyp );
-void show_flagset( int thevalue, struct flaginfo thebitnames[] );
+void showbaud( int  );
+void show_some_flags( struct termios * );
+void show_flagset( int thevalue, struct flaginfo * );
 
 void main()
 {
@@ -84,7 +84,7 @@ void show_some_flags( struct termios *ttyp )
 	show_flagset( ttyp->c_lflag, local_flags );
 }
 
-show_flagset( int thevalue, struct flaginfo thebitnames[] )
+void show_flagset( int thevalue, struct flaginfo thebitnames[] )
 /*
  * check each bit pattern and display descriptive title
  */

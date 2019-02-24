@@ -9,12 +9,12 @@
 #include <fcntl.h>
 #include <time.h>
 #include <stdlib.h>
-#include "who1bot.c"
+//#include "who1bot.c"
 
 #define	SHOWHOST
 
-void show_info(struct utmp *);
-void showtime(time_t);
+void showtime( time_t timeval );
+void show_info( struct utmp *utbufp );
 
 int main()
 {
@@ -30,6 +30,7 @@ int main()
 	utmp_close( );
 	return 0;
 }
+
 /*
  *	show info()
  *			displays the contents of the utmp struct

@@ -8,7 +8,7 @@
 
 void do_ls(char []);
 
-main(int ac, char *av[])
+void main(int ac, char *av[])
 {
 	if ( ac == 1 )
 		do_ls( "." );

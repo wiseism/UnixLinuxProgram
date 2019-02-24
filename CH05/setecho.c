@@ -3,8 +3,8 @@
  *   shows:  how to read, change, reset tty attributes
  */
 
-#include        <stdio.h>
-#include        <termios.h>
+#include <stdio.h>
+#include <termios.h>
 #include <stdlib.h>
 
 #define  oops(s,x) { perror(s); exit(x); }

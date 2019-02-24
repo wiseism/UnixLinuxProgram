@@ -3,11 +3,12 @@
  *	  - formats time nicely
  *	  - buffers input (using utmplib)
  */
-#include	<stdio.h>
-#include	<sys/types.h>
-#include	<utmp.h>
-#include	<fcntl.h>
-#include	<time.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <utmp.h>
+#include <fcntl.h>
+#include <time.h>
+#include <stdlib.h>
 
 #define	SHOWHOST
 

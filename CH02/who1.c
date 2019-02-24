@@ -1,13 +1,15 @@
 /* who1.c  - a first version of the who program
  *              open, read UTMP file, and show results
  */
-#include	<stdio.h>
-#include	<utmp.h>
-#include	<fcntl.h>
-#include	<unistd.h>
+#include <stdio.h>
+#include <utmp.h>
+#include <fcntl.h>
+#include <unistd.h>
 #include <stdlib.h>
 
 #define	SHOWHOST	/* include remote machine on output */
+
+void show_info( struct utmp *utbufp );
 
 int main()
 {
@@ -30,7 +32,7 @@ int main()
  *	displays contents of the utmp struct in human readable form
  *	*note* these sizes should not be hardwired
  */
-show_info( struct utmp *utbufp )
+void show_info( struct utmp *utbufp )
 {
 	printf("%-8.8s", utbufp->ut_name);	/* the logname	*/
 	printf(" ");				/* a space	*/

@@ -11,6 +11,7 @@
 #include	<fcntl.h>
 #include	<string.h>
 #include <ctype.h>
+#include <zconf.h>
 
 #define	ASK		"Do you want another transaction"
 #define	TRIES	   3	                                   /* max tries */
@@ -21,6 +22,7 @@ void tty_mode(int how);
 void set_cr_noecho_mode();
 void set_nodelay_mode();
 int get_response( char *question , int maxtries);
+int get_ok_char();
 
 int main()
 {
