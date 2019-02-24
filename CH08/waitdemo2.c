@@ -1,7 +1,7 @@
 /* waitdemo2.c - shows how parent gets child status
  */
 
-#include	<stdio.h>
+#include <stdio.h>
 #include <zconf.h>
 #include <stdlib.h>
 #include <sys/wait.h>
