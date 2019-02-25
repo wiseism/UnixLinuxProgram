@@ -5,9 +5,44 @@
 
 对‘splitline’未定义的引用
 
+- forkdemo1
+- forkdemo2
+- forkdemo3
 - waitdemo1
 - waitdemo2
 
+### forkdemo1
+
+```shell
+
+forkdemo1
+Before: my pid is 6261
+After: my pid is 6261, fork() said 6262
+After: my pid is 6262, fork() said 0
+
+```
+
+### forkdemo2
+
+```shell
+
+forkdemo2
+my pid is 6125
+my pid is 6125
+my pid is 6128
+
+```
+
+### forkdemo3
+
+```shell
+
+forkdemo3
+Before: my pid is 6371
+I am the parent. my child is 6373
+I am the child.  my pid=6373
+
+```
 
 ### waitdemo1
 

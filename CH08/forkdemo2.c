@@ -1,5 +1,6 @@
 #include <zconf.h>
-#include <caca_conio.h>
+#include <stdio.h>
+//#include <caca_conio.h>
 
 /* forkdemo2.c - shows how child processes pick up at the return
  *               from fork() and can execute any code they like,
