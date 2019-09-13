@@ -38,6 +38,9 @@ make: *** [CH07_bounce_aio] 错误 2
 
 [CLion中使用CMake导入第三方库的方法](https://blog.csdn.net/haoran823/article/details/71657602)
 
+[linux 下curses库的安装和使用](https://blog.csdn.net/qq_41603898/article/details/80880538)
+
+
 对‘splitline’未定义的引用
 对‘aio_read’未定义的引用
 

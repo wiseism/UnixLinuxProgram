@@ -12,10 +12,10 @@ void main()
 	void	f(int);			/* declare the handler	*/
 	int	i;
 
-	signal( SIGINT, f );		/* install the handler	*/
+	signal( SIGINT, f );		/* install the handler SIGINT 终止进程	*/
 	for(i=0; i<5; i++ ){		/* do something else	*/
 		printf("hello\n");
-		sleep(1);
+		sleep(2);
 	}
 }
 

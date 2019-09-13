@@ -1,8 +1,14 @@
 # CH05
 
+stty change and print terminal line settings
+
+```bash
+
 stty
 speed 38400 baud; line = 0;
 -brkint -imaxbel iutf8
+
+```
 
 https://blog.csdn.net/lqxandroid2012/article/details/78929506
 

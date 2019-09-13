@@ -13,6 +13,10 @@ int  see_more();
 
 int main( int ac , char *av[] )
 {
+    for(int i =0;i<ac;i++){
+        printf('there is :',av[i]);
+    }
+
 	FILE *fp;
 
 	if ( ac == 1 ){
