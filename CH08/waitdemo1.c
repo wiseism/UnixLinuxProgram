@@ -11,7 +11,7 @@
 void main()
 {
 	int  newpid;
-	void child_code(), parent_code();
+	void child_code(), parent_code();//声明两个函数
 
 	printf("before: mypid is %d\n", getpid());
 

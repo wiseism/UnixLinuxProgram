@@ -9,9 +9,10 @@
 
 void main()
 {
-	printf("my pid is %d\n", getpid() );
+	printf("Before fork my pid is %d\n", getpid() );
+	fork();
+//	fork();//增加一次fork不增加打印的pid数量，Afrer fork只有三行？
 	fork();
 	fork();
-	fork();
-	printf("my pid is %d\n", getpid() );
+	printf("After fork my pid is %d\n", getpid() );
 }
