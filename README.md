@@ -40,3 +40,11 @@ who3.c
 utmp_open()
 utmp_next()
 utmp_close()
+
+
+### linux c api has?
+
+libncurses
+
+splite CH01
+

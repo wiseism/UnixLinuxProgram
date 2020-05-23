@@ -4,8 +4,8 @@ project(UnixLinuxProgram)
 #set(CMAKE_CXX_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(CH01_more01 CH01/more01.c)
-add_executable(CH01_more02 CH01/more02.c)
+add_subdirectory(CH01)
+
 
 add_executable(CH02_cp1 CH02/cp1.c)
 add_executable(CH02_cp01 CH02/cp01.c)
