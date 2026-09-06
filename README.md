@@ -6,40 +6,35 @@
 linux cmmake编译
 
 ### 工具版本
-- clion clion 2019.3支持cmake 3.15
-- gcc
-- g++
-- cmake
-- make
+
+（以下为当前实际环境版本，2026-09 实测）
+
+- 系统：Ubuntu 24.04，x86_64
+- gcc / g++：13.3.0（Ubuntu 13.3.0-6ubuntu2~24.04.1）
+- cmake：3.28.3
+- make：GNU Make 4.3
+- IDE：CLion（新版本即可；旧版 2019.3 需 cmake 3.15 支持）
 
 ```shell script
-gcc -v
-Using built-in specs.
-COLLECT_GCC=gcc
-COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/5/lto-wrapper
-Target: x86_64-linux-gnu
-Configured with: ../src/configure -v --with-pkgversion='Ubuntu 5.4.0-6ubuntu1~16.04.10' --with-bugurl=file:///usr/share/doc/gcc-5/README.Bugs --enable-languages=c,ada,c++,java,go,d,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-5 --enable-shared --enable-linker-build-id --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --libdir=/usr/lib --enable-nls --with-sysroot=/ --enable-clocale=gnu --enable-libstdcxx-debug --enable-libstdcxx-time=yes --with-default-libstdcxx-abi=new --enable-gnu-unique-object --disable-vtable-verify --enable-libmpx --enable-plugin --with-system-zlib --disable-browser-plugin --enable-java-awt=gtk --enable-gtk-cairo --with-java-home=/usr/lib/jvm/java-1.5.0-gcj-5-amd64/jre --enable-java-home --with-jvm-root-dir=/usr/lib/jvm/java-1.5.0-gcj-5-amd64 --with-jvm-jar-dir=/usr/lib/jvm-exports/java-1.5.0-gcj-5-amd64 --with-arch-directory=amd64 --with-ecj-jar=/usr/share/java/eclipse-ecj.jar --enable-objc-gc --enable-multiarch --disable-werror --with-arch-32=i686 --with-abi=m64 --with-multilib-list=m32,m64,mx32 --enable-multilib --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
-Thread model: posix
-gcc version 5.4.0 20160609 (Ubuntu 5.4.0-6ubuntu1~16.04.10) 
+gcc --version
+gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
 
+cmake --version
+cmake version 3.28.3
 
-make -v
-GNU Make 3.81
-Copyright (C) 2006  Free Software Foundation, Inc.
-This is free software; see the source for copying conditions.
-There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
-
-This program built for x86_64-unknown-linux-gnu
+make --version
+GNU Make 4.3
 ```
 
 ### 没有搞定的项目
 
+无（全部目标 cmake 编译通过，可执行程序在 build/ 目录）
 
-who3.c
-utmp_open()
-utmp_next()
-utmp_close()
+- who3.c / utmp_open() / utmp_next() / utmp_close() 已解决：
+  新建 CH02/utmplib.h，who3、who3top 链接 CH02_utmplib 静态库。
+  注：who3top.c 原文件不完整（文件尾部注释被截断），现按
+  who3top(main) + who1bot.c(show_info) + utmplib 结构编译通过；
+  如需 who3 风格(showtime 格式化时间)输出，可再补充 who3bot.c。
 
 
 ### linux c api has?

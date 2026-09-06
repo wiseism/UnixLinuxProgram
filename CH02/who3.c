@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <time.h>
 #include <stdlib.h>
+#include "utmplib.h"
 //#include "who1bot.c"
 
 #define	SHOWHOST

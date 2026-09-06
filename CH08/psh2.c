@@ -8,7 +8,7 @@
 
 #include <stdio.h>
 #include <signal.h>
-#include <zconf.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <memory.h>
 
@@ -70,7 +70,7 @@ char *makestring( char *buf )
  * trim off newline and create storage for the string
  */
 {
-	char	*cp, *malloc();
+	char	*cp;
 
 	buf[strlen(buf)-1] = '\0';		/* trim newline	*/
 	cp = malloc( strlen(buf)+1 );		/* get memory	*/

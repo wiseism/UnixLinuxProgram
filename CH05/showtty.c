@@ -8,6 +8,7 @@
 
 void showbaud( int  );
 void show_some_flags( struct termios * );
+struct flaginfo;
 void show_flagset( int thevalue, struct flaginfo * );
 
 void main()

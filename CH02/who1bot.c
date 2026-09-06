@@ -5,8 +5,9 @@
  */
 
 #include <stdio.h>
+#include <utmp.h>
 
-show_info( struct utmp *utbufp )
+void show_info( struct utmp *utbufp )
 {
 	printf("%-8.8s", utbufp->ut_name);	/* the logname	*/
 	printf(" ");				/* a space	*/

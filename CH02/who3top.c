@@ -9,6 +9,7 @@
 #include <fcntl.h>
 #include <time.h>
 #include <stdlib.h>
+#include "utmplib.h"
 
 #define	SHOWHOST
 
@@ -29,6 +30,3 @@ int main()
 	utmp_close( );
 	return 0;
 }
-/*
- *	show info()
- ...

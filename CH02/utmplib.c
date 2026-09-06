@@ -13,7 +13,8 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <utmp.h>
-#include <zconf.h>
+#include <unistd.h>
+#include "utmplib.h"
 
 #define NRECS   16
 #define NULLUT  ((struct utmp *)NULL)
@@ -24,15 +25,16 @@ static  int     num_recs;                               /* num stored   */
 static  int     cur_rec;                                /* next to go   */
 static  int     fd_utmp = -1;                           /* read from    */
 
-int utmp_reload();
-utmp_open( char *filename )
+int utmp_reload(void);
+
+int utmp_open( char *filename )
 {
         fd_utmp = open( filename, O_RDONLY );           /* open it      */
         cur_rec = num_recs = 0;                         /* no recs yet  */
         return fd_utmp;                                 /* report       */
 }
 
-struct utmp *utmp_next()
+struct utmp *utmp_next(void)
 {
         struct utmp *recp;
 
@@ -46,7 +48,7 @@ struct utmp *utmp_next()
         return recp;
 }
 
-int utmp_reload()
+int utmp_reload(void)
 /*
  *      read next bunch of records into buffer
  */
@@ -63,7 +65,7 @@ int utmp_reload()
         return num_recs;
 }
 
-utmp_close()
+void utmp_close(void)
 {
         if ( fd_utmp != -1 )                    /* don't close if not   */
                 close( fd_utmp );               /* open                 */
