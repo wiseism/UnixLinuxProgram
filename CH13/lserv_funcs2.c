@@ -68,7 +68,7 @@ void shut_down()
  * handle_request(request, clientaddr, addrlen)
  *   branch on code in request
  */
-void handle_request(char *req,struct sockaddr *client, socklen_t addlen)
+void handle_request(char *req,struct sockaddr_in *client, socklen_t addlen)
 {
 	char	*response;
 	int	ret;

@@ -9,8 +9,10 @@
 #include <netinet/in.h>
 #include <signal.h>
 #include <sys/errno.h>
+#include <unistd.h>       /* alarm */
 int setup();	/* 前向声明 */
 void handle_request(char *, struct sockaddr_in *, socklen_t);	/* 前向声明 */
+int alarm(unsigned);	/* 前向声明: alarm 属 posix, 需 unistd */
 void narrate(char *, char *, struct sockaddr_in *);	/* 前向声明 */
 
 #define	MSGLEN		128
