@@ -13,7 +13,7 @@ void do_regular_work();	/* 前向声明 */
 void release_ticket();	/* 前向声明 */
 void shut_down();	/* 前向声明 */
 
-int int main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	setup();
 	if (get_ticket() != 0 )
@@ -28,7 +28,7 @@ int int main(int ac, char *av[])
 /****************************************************************************
  * do_regular_work  the main work of the application goes here
  */
-do_regular_work()
+void do_regular_work()
 {
 	printf("SuperSleep version 1.0 Running - Licensed Software\n");
 	sleep(10);	/* our patented sleep algorithm */
