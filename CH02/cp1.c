@@ -13,7 +13,7 @@
 
 void oops(char *, char *);
 
-main(int ac, char *av[])
+int main(int ac, char *av[])
 {
         int     in_fd, out_fd, n_chars;
         char    buf[BUFFERSIZE];
