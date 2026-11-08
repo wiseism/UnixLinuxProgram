@@ -21,8 +21,10 @@
 #include <time.h>
 void process_rq(char *, int);	/* 前向声明 */
 void sanitize(char *);	/* 前向声明 */
-void built_in(char *, int);	/* 前向声明 */
-void not_implemented(int);	/* 前向声明 */
+int built_in(char *, int);
+void do_ls(char *, int);
+void http_reply(int, FILE **, int, char *, char *, char *);	/* 前向声明 */
+int not_implemented(int);	/* 前向声明 */
 void do_404(char *, int);	/* 前向声明 */
 int isadir(char *);	/* 前向声明 */
 int not_exist(char *);	/* 前向声明 */
@@ -102,7 +104,7 @@ void *handle_call(void *fdptr)
    skip_rest_of_header(FILE *)
    skip over all request info until a CRNL is seen
    ------------------------------------------------------ */
-skip_rest_of_header(FILE *fp)
+void skip_rest_of_header(FILE *fp)
 {
 	char	buf[BUFSIZ];
 	while( fgets(buf,BUFSIZ,fp) != NULL && strcmp(buf,"\r\n") != 0 )
@@ -125,7 +127,7 @@ void process_rq( char *rq, int fd)
 	printf("sanitized version is %s\n", arg);
 
 	if ( strcmp(cmd,"GET") != 0 )
-		not_implemented();
+		not_implemented(fd);
 	else if ( built_in(arg, fd) )
 		;
 	else if ( not_exist( arg ) )
@@ -161,7 +163,7 @@ void sanitize(char *str)
 }
 
 /* handle built-in URLs here.  Only one so far is "status" */
-void built_in(char *arg, int fd)
+int built_in(char *arg, int fd)
 {
 	FILE	*fp;
 
@@ -176,7 +178,7 @@ void built_in(char *arg, int fd)
 	return 1;
 }
 
-http_reply(int fd, FILE **fpp, int code, char *msg, char *type, char *content)
+void http_reply(int fd, FILE **fpp, int code, char *msg, char *type, char *content)
 {
 	FILE	*fp = fdopen(fd, "w");
 	int	bytes = 0;
@@ -200,7 +202,7 @@ http_reply(int fd, FILE **fpp, int code, char *msg, char *type, char *content)
         not_implemented(fd)      unimplemented HTTP command
         and do_404(item,fd)     no such object
    ------------------------------------------------------ */
-void not_implemented(int fd)
+int not_implemented(int fd)
 {
 	http_reply(fd,NULL,501,"Not Implemented","text/plain",
 			"That command is not implemented");
