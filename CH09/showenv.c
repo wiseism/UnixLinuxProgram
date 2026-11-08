@@ -1,3 +1,4 @@
+#include <stdio.h>      /* 需要 printf(); 新版 GCC 隐式声明报错 */
 /*  showenv.c - shows how to read and print the environment
  */
 
