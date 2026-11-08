@@ -17,6 +17,9 @@
 #include	<signal.h>
 #include <unistd.h>       /* 需要 sleep(); 新版 GCC 隐式声明报错 */
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+int set_sem_value(int, int, int);	/* 前向声明 */
+int wait_and_lock(int);	/* 前向声明 */
+int release_lock(int);	/* 前向声明 */
 
 #define	TIME_MEM_KEY	99			/* like a filename      */
 #define	TIME_SEM_KEY	9900
@@ -81,7 +84,7 @@ void cleanup(int n)
 /*
  * initialize a semaphore
  */
-set_sem_value(int semset_id, int semnum, int val)
+int set_sem_value(int semset_id, int semnum, int val)
 {
 	union semun  initval;
 
@@ -94,7 +97,7 @@ set_sem_value(int semset_id, int semnum, int val)
  * build and execute a 2-element action set: 
  *    wait for 0 on n_readers AND increment n_writers
  */
-wait_and_lock( int semset_id )
+int wait_and_lock( int semset_id )
 {
 	struct sembuf actions[2];	/* action set		*/
 
@@ -114,7 +117,7 @@ wait_and_lock( int semset_id )
  * build and execute a 1-element action set:
  *    decrement num_writers
  */
-release_lock( int semset_id )
+int release_lock( int semset_id )
 {
 	struct sembuf actions[1];	/* action set		*/
 
