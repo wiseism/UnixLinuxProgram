@@ -27,7 +27,7 @@ int main(int ac, char *av[])
 
 	return 0;
 }
-/\*\*\**
+*
  * do_regular_work  the main work of the application goes here
  */
 void do_regular_work()
