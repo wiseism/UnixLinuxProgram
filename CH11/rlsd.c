@@ -14,6 +14,8 @@
 #include  <time.h>
 #include  <strings.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+#include <stdlib.h>       /* 新版 GCC 隐式声明报错 */
+#include <ctype.h>       /* 新版 GCC 隐式声明报错 */
 
 #define   PORTNUM  15000   /* our remote ls server port */
 #define   HOSTLEN  256
@@ -87,7 +89,7 @@ int main(int ac, char *av[])
        }
 }
 
-sanitize(char *str)
+void sanitize(char *str)
 /*
  * it would be very bad if someone passed us an dirname like
  * "; rm *"  and we naively created a command  "ls ; rm *"
