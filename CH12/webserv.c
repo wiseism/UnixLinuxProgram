@@ -139,13 +139,13 @@ void do_404(char *item, int fd)
    do_ls runs ls. It should not
    ------------------------------------------------------ */
 
-isadir(char *f)
+int isadir(char *f)	/* 原文返回 stat 结果 */
 {
 	struct stat info;
 	return ( stat(f, &info) != -1 && S_ISDIR(info.st_mode) );
 }
 
-void not_exist(char *f)
+int not_exist(char *f)
 {
 	struct stat info;
 	return( stat(f,&info) == -1 );
