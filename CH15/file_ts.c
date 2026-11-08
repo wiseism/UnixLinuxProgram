@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <zconf.h>
 #include <memory.h>
+#include <unistd.h>       /* 需要 sleep(); 新版 GCC 隐式声明报错 */
 
 #define  oops(m,x)  { perror(m); exit(x); }
 

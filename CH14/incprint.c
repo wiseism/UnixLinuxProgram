@@ -3,6 +3,7 @@
 #include  <stdio.h>
 #include  <pthread.h>
 #include <zconf.h>
+#include <unistd.h>       /* 需要 sleep(); 新版 GCC 隐式声明报错 */
 
 #define	NUM	5
 
