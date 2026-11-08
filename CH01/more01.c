@@ -14,7 +14,7 @@ int  see_more();
 int main( int ac , char *av[] )
 {
     for(int i =0;i<ac;i++){
-        printf('there is :',av[i]);
+        printf("there is : %s\n", av[i]);
     }
 
 	FILE *fp;
