@@ -7,6 +7,7 @@
  **/
 
 #include <stdio.h>
+#include <sys/wait.h>       /* 需要 wait(); 新版 GCC 隐式声明报错 */
 #include <signal.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -15,7 +16,7 @@
 #define	MAXARGS		20				/* cmdline args	*/
 #define	ARGLEN		100				/* token length	*/
 
-execute( char *arglist[] );
+void execute( char *arglist[] );
 
 int main()
 {
@@ -42,7 +43,7 @@ int main()
 	return 0;
 }
 
-execute( char *arglist[] )
+void execute( char *arglist[] )
 /*
  *	use fork and execvp and wait to do it
  */
