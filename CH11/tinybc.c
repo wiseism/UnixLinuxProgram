@@ -32,6 +32,8 @@
 #define	oops(m,x)	{ perror(m); exit(x); }
 
 void be_dc(int in[2], int out[2]);
+void be_bc(int todc[2], int fromdc[2]);	/* 前向声明: main 中调用 */
+void fatal( char *mess );
 
 void main()
 {
@@ -117,7 +119,7 @@ void be_bc(int todc[2], int fromdc[2])
 	fclose(fpin);		/* dc will see EOF	*/
 }
 
-fatal( char *mess )
+void fatal( char *mess )
 {
 	fprintf(stderr, "Error: %s\n", mess);
 	exit(1);
