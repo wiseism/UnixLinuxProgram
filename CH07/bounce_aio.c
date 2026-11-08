@@ -1,4 +1,3 @@
-/* 兼容新版 GCC: 显式声明跨文件函数 */
 /* bounce_aio.c
  *	purpose	animation with user control, using aio_read() etc
  *	note	set_ticker() sends SIGALRM, handler does animation
@@ -12,6 +11,7 @@
 #include <zconf.h>
 #include <memory.h>
 #include <sys/time.h>
+int set_ticker( int n_msecs );	/* 新版 GCC 需要显式声明 */
 
 
 /* The state of the game 			*/
@@ -128,4 +128,3 @@ void setup_aio_buffer()
 	kbcbuf.aio_sigevent.sigev_notify = SIGEV_SIGNAL;
 	kbcbuf.aio_sigevent.sigev_signo  = SIGIO;  /* send sIGIO   */
 }
-int set_ticker( int n_msecs );

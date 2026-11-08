@@ -1,4 +1,3 @@
-/* 兼容新版 GCC: 显式声明跨文件函数 */
 /* bounce1d.c
  *	purpose	animation with user controlled speed and direction
  *	note	the handler does the animation
@@ -9,6 +8,7 @@
 #include <curses.h>
 #include <signal.h>
 #include <memory.h>
+int set_ticker( int n_msecs );	/* 新版 GCC 需要显式声明 */
 
 /* some global settings main and the handler use */
 
@@ -74,4 +74,3 @@ void move_msg(int signum)
 	else if ( dir == 1 && col+strlen(MESSAGE) >= COLS )
 		dir = -1;
 }
-int set_ticker( int n_msecs );

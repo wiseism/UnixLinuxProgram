@@ -1,4 +1,3 @@
-/* 兼容新版 GCC: 显式声明跨文件函数 */
 /* bounce_async.c
  *	purpose	animation with user control, using O_ASYNC on fd
  *	note	set_ticker() sends SIGALRM, handler does animation
@@ -11,6 +10,7 @@
 #include <fcntl.h>
 #include <zconf.h>
 #include <memory.h>
+int set_ticker( int n_msecs );	/* 新版 GCC 需要显式声明 */
 
 /* The state of the game */
 
@@ -84,4 +84,3 @@ void enable_kbd_signals()
 	fcntl(0, F_SETFL, (fd_flags|O_ASYNC));
 }
 
-int set_ticker( int n_msecs );
