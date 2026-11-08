@@ -4,6 +4,10 @@ project(UnixLinuxProgram)
 #set(CMAKE_CXX_STANDARD 99)
 set(CMAKE_CXX_STANDARD 11)
 
+# 新版 runner GCC14+ 将隐式 int 视为错误，本项目为 K&R/C89 风格老书代码，统一按 C89 编译
+set(CMAKE_C_STANDARD 90)
+set(CMAKE_C_STANDARD_REQUIRED ON)
+
 add_subdirectory(CH01)
 
 
