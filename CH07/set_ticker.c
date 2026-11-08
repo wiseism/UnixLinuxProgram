@@ -13,7 +13,7 @@
  */
 
 
-int set_ticker( n_msecs )
+int set_ticker(int n_msecs)
 {
         struct itimerval new_timeset;
         long    n_sec, n_usecs;

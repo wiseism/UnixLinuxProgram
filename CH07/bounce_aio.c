@@ -27,7 +27,7 @@ int	done  = 0;
 
 struct aiocb kbcbuf;	/* an aio control buf   */
 
-int set_ticker( n_msecs )
+int set_ticker(int n_msecs)
 {
 	struct itimerval new_timeset;
 	long    n_sec, n_usecs;
