@@ -20,7 +20,7 @@ void narrate(char *, char *, struct sockaddr_in *);	/* 前向声明 */
 #define RECLAIM_INTERVAL 5		/* reclaim every 60 seconds */
 int main(int ac, char *av[])
 {
-	struct sockaddr client_addr;
+	struct sockaddr_in client_addr;	/* 与 funcs2 统一 */
 	socklen_t addrlen;
 	char      buf[MSGLEN];
 	int	  ret, sock;
