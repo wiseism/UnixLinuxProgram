@@ -8,6 +8,7 @@
  */
 #include <stdio.h>
 #include <signal.h>
+#include <unistd.h>       /* pipe/fork/close/dup2/execl */
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define	READ	0
