@@ -9,6 +9,7 @@
 
 #include	<stdio.h>
 #include	<fcntl.h>
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 void main( int ac, char *av[] )
 {

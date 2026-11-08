@@ -9,6 +9,7 @@
 #include	<sys/types.h>
 #include	<sys/ipc.h>
 #include	<sys/sem.h>
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define	TIME_MEM_KEY	99		/* kind of like a port number */
 #define	TIME_SEM_KEY	9900		/* like a filename	      */

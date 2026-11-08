@@ -8,6 +8,7 @@
 #include	<sys/socket.h>
 #include	<sys/un.h>
 #include	<time.h>
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define	MSGLEN	512
 #define oops(m,x) { perror(m); exit(x); }

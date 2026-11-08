@@ -8,6 +8,7 @@
  */
 #include <stdio.h>
 #include <signal.h>
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define	READ	0
 #define	WRITE	1

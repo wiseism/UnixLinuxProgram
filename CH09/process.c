@@ -10,6 +10,7 @@
 
 #include	<stdio.h>
 #include	"smsh.h"
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 int is_control_command(char *);
 int do_control_command(char **);

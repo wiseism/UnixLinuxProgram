@@ -4,6 +4,7 @@
 #include	<sys/shm.h>
 #include	<time.h>
 #include <unistd.h>       /* 需要 sleep(); 新版 GCC 隐式声明报错 */
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define	TIME_MEM_KEY	99			/* like a filename      */
 #define	SEG_SIZE	((size_t)100)		/* size of segment	*/

@@ -5,6 +5,7 @@
 #include	<stdio.h>
 #include <zconf.h>
 #include <memory.h>
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define	CHILD_MESS	"I want a cookie\n"
 #define	PAR_MESS	"testing..\n"

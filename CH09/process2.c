@@ -1,5 +1,6 @@
 #include	<stdio.h>
 #include	"smsh.h"
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 /* process2.c   - version 2 - supports builtins
  * command processing layer

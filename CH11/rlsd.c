@@ -9,6 +9,7 @@
 #include  <netdb.h>
 #include  <time.h>
 #include  <strings.h>
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define   PORTNUM  15000   /* our remote ls server port */
 #define   HOSTLEN  256

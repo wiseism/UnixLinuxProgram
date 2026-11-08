@@ -10,6 +10,7 @@
 #include <netdb.h>
 #include <signal.h>
 #include <sys/errno.h>
+#include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 
 #define SERVER_PORTNUM	2020		/* Our server's port number */
 #define MSGLEN		128		/* Size of our datagrams */
