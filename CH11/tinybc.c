@@ -35,7 +35,7 @@ void be_dc(int in[2], int out[2]);
 void be_bc(int todc[2], int fromdc[2]);	/* 前向声明: main 中调用 */
 void fatal( char *mess );
 
-void main()
+int main()
 {
 	int	pid, todc[2], fromdc[2];	/* equipment	*/
 
@@ -54,6 +54,7 @@ void main()
 		be_bc(todc, fromdc);		/* parent is ui	*/
 		wait(NULL);			/* wait for child */
 	}
+	return 0;
 }
 
 void be_dc(int in[2], int out[2])

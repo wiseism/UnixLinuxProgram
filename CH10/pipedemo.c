@@ -11,7 +11,7 @@
 #include <stdlib.h>
 #include <memory.h>
 
-void main()
+int main()
 {
 	int	len, i, apipe[2];	/* two file descriptors */
 	char	buf[BUFSIZ];		/* for reading end	*/
@@ -44,4 +44,5 @@ void main()
 			break;					/* stdout */
 		}
 	}
+	return 0;
 }

@@ -14,7 +14,7 @@
 
 #define	INPUTLEN	100
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	void	inthandler(int);
 	void	quithandler(int);
@@ -35,6 +35,7 @@ void main(int ac, char *av[])
 		}
 	} 
 	while( strncmp( input , "quit" , 4 ) != 0 );
+	return 0;
 }
 
 void inthandler(int s)

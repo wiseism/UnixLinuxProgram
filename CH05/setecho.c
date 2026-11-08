@@ -9,7 +9,7 @@
 
 #define  oops(s,x) { perror(s); exit(x); }
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
         struct termios info;
 
@@ -26,4 +26,5 @@ void main(int ac, char *av[])
 
         if ( tcsetattr(0,TCSANOW,&info) == -1 ) /* set attribs    */
                oops("tcsetattr",2);
+	return 0;
 }

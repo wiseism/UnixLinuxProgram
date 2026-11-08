@@ -45,7 +45,7 @@ int set_ticker(int n_msecs)
 	return setitimer(ITIMER_REAL, &new_timeset, NULL);
 }
 
-void main()
+int main()
 {
 	void	on_alarm();	/* handler for alarm	*/
 	void	on_input();	/* handler for keybd    */
@@ -68,6 +68,7 @@ void main()
 	while( !done )			  /* the main loop */
 		pause();
 	endwin();
+	return 0;
 }
 /*
  * handler called when aio_read() has stuff to read

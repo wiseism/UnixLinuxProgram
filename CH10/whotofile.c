@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #include <sys/wait.h>
 
-void main()
+int main()
 {
 	int	pid ;
 	int	fd;
@@ -33,4 +33,5 @@ void main()
 		wait(NULL);
 		printf("Done running who.  results in userlist\n");
 	}
+	return 0;
 }

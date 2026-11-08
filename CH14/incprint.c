@@ -11,7 +11,7 @@
 
 int     counter = 0;
 
-void main()
+int main()
 {
 	pthread_t t1;			/* one thread */
 	void	  *print_count(void *); /* its function */
@@ -24,6 +24,7 @@ void main()
 	}
 
 	pthread_join(t1, NULL);
+	return 0;
 }
 
 void *print_count(void *m)

@@ -10,7 +10,7 @@
 #define	RIGHTEDGE	30
 #define	ROW		10
 
-void main()
+int main()
 {
 	char	message[] = "Hello";
 	char	blank[]   = "     ";
@@ -33,4 +33,5 @@ void main()
 		if ( pos <= LEFTEDGE )
 			dir = +1;
 	  }
+	return 0;
 }

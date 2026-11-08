@@ -16,7 +16,7 @@
 #define        oops(msg)       { perror(msg); exit(1); }
 #define		PORTNUM		15000
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	struct sockaddr_in  servadd;        /* the number to call */
 	struct hostent      *hp;            /* used to get number */
@@ -57,4 +57,5 @@ void main(int ac, char *av[])
 		if ( write(1, buffer, n_read) == -1 )
 			oops("write");
 	close( sock_id );    
+	return 0;
 }

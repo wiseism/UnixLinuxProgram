@@ -7,12 +7,13 @@
 
 #define	NUM	5
 
-void main()
+int main()
 {
 	void	print_msg(char *);
 
 	print_msg("hello");
 	print_msg("world\n");
+	return 0;
 }
 void print_msg(char *m)
 {

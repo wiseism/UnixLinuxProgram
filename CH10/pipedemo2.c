@@ -13,7 +13,7 @@
 #define	PAR_MESS	"testing..\n"
 #define	oops(m,x)	{ perror(m); exit(x); }
 
-void main()
+int main()
 {
 	int	pipefd[2];		/* the pipe	*/
 	int	len;			/* for write	*/
@@ -49,4 +49,5 @@ void main()
 				write( 1 , buf, read_len );
 			}
 	}
+	return 0;
 }

@@ -9,7 +9,7 @@
 
 #define	DELAY	5
 
-void main()
+int main()
 {
 	int  newpid;
 	void child_code(), parent_code();
@@ -22,6 +22,7 @@ void main()
 		child_code(DELAY);
 	else
 		parent_code(newpid);
+	return 0;
 }
 
 /*

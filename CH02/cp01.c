@@ -16,7 +16,7 @@
 
 void oops(char *, char *);
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
         int     in_fd, out_fd, n_chars;
         char    buf[BUFFERSIZE];
@@ -45,6 +45,7 @@ void main(int ac, char *av[])
 
         if ( close(in_fd) == -1 || close(out_fd) == -1 )
                 oops("Error closing files","");
+	return 0;
 }
 
 void oops(char *s1, char *s2)

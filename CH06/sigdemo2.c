@@ -7,7 +7,7 @@
 #include <signal.h>
 #include <zconf.h>
 
-void main()
+int main()
 {
 	signal( SIGINT, SIG_IGN );
 
@@ -17,5 +17,6 @@ void main()
 		sleep(1);
 		printf("haha\n");
 	}
+	return 0;
 }
 

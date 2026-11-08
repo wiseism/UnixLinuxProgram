@@ -8,7 +8,7 @@
 #include <zconf.h>
 // #define	SHHHH
 
-void main()
+int main()
 {
 	void	wakeup(int);
 
@@ -17,6 +17,7 @@ void main()
 	alarm(4);				/* set clock	*/
 	pause();				/* freeze here	*/
 	printf("Morning so soon?\n");		/* back to work	*/
+	return 0;
 }
 
 void wakeup(int signum)

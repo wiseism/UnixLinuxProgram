@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <zconf.h>
 
-void main()
+int main()
 {
 	void	f(int);			/* declare the handler	*/
 	int	i;
@@ -18,6 +18,7 @@ void main()
 		printf("hello\n");
 		sleep(2);
 	}
+	return 0;
 }
 
 void f(int signum)			/* this function is called */

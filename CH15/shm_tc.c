@@ -9,7 +9,7 @@
 #define	SEG_SIZE	((size_t)100)		/* size of segment	*/
 #define oops(m,x)  { perror(m); exit(x); }
 
-void main()
+int main()
 {
 	int	seg_id;
 	char	*mem_ptr, *ctime();

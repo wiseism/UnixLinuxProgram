@@ -10,7 +10,7 @@
 
 #define	DELAY	2
 
-void main()
+int main()
 {
 	int  newpid;
 	void child_code(), parent_code();//声明两个函数
@@ -23,6 +23,7 @@ void main()
 		child_code(DELAY);
 	else
 		parent_code(newpid);
+	return 0;
 }
 /*
  * new process takes a nap and then exits

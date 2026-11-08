@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <zconf.h>
 
-void main()
+int main()
 {
 	int	ret_from_fork, mypid;
 
@@ -19,4 +19,5 @@ void main()
 	sleep(1);
 	printf("After: my pid is %d, fork() said %d\n",
 			getpid(), ret_from_fork);
+	return 0;
 }

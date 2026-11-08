@@ -9,7 +9,7 @@
 
 int	  total_words ;
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	pthread_t t1, t2;		/* two threads */
 	void	  *count_words(void *);
@@ -24,6 +24,7 @@ void main(int ac, char *av[])
 	pthread_join(t1, NULL);
 	pthread_join(t2, NULL);
 	printf("%5d: total words\n", total_words);
+	return 0;
 }
 void *count_words(void *f)
 {

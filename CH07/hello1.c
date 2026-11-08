@@ -6,7 +6,7 @@
 #include	<stdio.h>
 #include	<curses.h>
 
-void main()
+int main()
 {
 	initscr() ;		/* turn on curses	*/
 
@@ -20,4 +20,5 @@ void main()
 	getch();		/* wait for user input	*/
 
 	endwin();		/* turn off curses	*/
+	return 0;
 }

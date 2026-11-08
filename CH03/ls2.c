@@ -18,7 +18,7 @@ void mode_to_letters( int , char [] );
 char *uid_to_name( uid_t );
 char *gid_to_name( gid_t );
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	if ( ac == 1 )
 		do_ls( "." );
@@ -27,6 +27,7 @@ void main(int ac, char *av[])
 			printf("%s:\n", *++av );
 			do_ls( *av );
 		}
+	return 0;
 }
 
 void do_ls( char dirname[] )

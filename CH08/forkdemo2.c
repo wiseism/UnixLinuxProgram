@@ -8,7 +8,7 @@
  *               even fork().  Predict number of lines of output.
  */
 
-void main()
+int main()
 {
 	printf("Before fork my pid is %d\n", getpid() );
 	fork();
@@ -16,4 +16,5 @@ void main()
 	fork();
 	fork();
 	printf("After fork my pid is %d\n", getpid() );
+	return 0;
 }

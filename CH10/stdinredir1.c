@@ -12,7 +12,7 @@
 #include <zconf.h>
 #include <stdlib.h>
 
-void main()
+int main()
 {
 	int	fd ;
 	char	line[100];
@@ -37,4 +37,5 @@ void main()
 	fgets( line, 100, stdin ); printf("%s", line );
 	fgets( line, 100, stdin ); printf("%s", line );
 	fgets( line, 100, stdin ); printf("%s", line );
+	return 0;
 }

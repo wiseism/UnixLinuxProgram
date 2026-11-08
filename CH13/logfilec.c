@@ -15,7 +15,7 @@
 #define	SOCKET	"/tmp/logfilesock"
 #define	oops(m,x) { perror(m); exit(x); }
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	int	           sock;
 	struct sockaddr_un addr;
@@ -38,4 +38,5 @@ void main(int ac, char *av[])
 	if ( sendto(sock,msg, strlen(msg), 0, 
 				(struct sockaddr *)&addr, addrlen) == -1 )
 		oops("sendto",3);
+	return 0;
 }

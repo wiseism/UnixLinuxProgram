@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <zconf.h>
 
-void main()
+int main()
 {
 	int	fork_rv;
 
@@ -22,4 +22,5 @@ void main()
 		printf("I am the child.  my pid=%d\n", getpid());
 	else
 		printf("I am the parent. my child is %d\n", fork_rv);
+	return 0;
 }

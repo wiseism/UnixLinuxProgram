@@ -25,7 +25,7 @@ int	dir   =  1;	/* where we are going	*/
 int	delay = 200;	/* how long to wait	*/
 int	done  = 0;
 
-void main()
+int main()
 {
 	void	on_alarm(int);	/* handler for alarm	*/
 	void	on_input(int);	/* handler for keybd    */
@@ -47,6 +47,7 @@ void main()
 	while( !done )			  /* the main loop */
 		pause();
 	endwin();
+	return 0;
 }
 void on_input(int signum)
 {

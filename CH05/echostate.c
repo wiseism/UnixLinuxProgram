@@ -7,7 +7,7 @@
 #include <termios.h>
 #include <stdlib.h>
 
-void main()
+int main()
 {
         struct termios info;
         int rv;
@@ -22,4 +22,5 @@ void main()
                 printf(" echo is on , since its bit is 1\n");
         else
                 printf(" echo if OFF, since its bit is 0\n");
+	return 0;
 }

@@ -16,7 +16,7 @@
  *        usage: write1 username
  */
 
-void main( int ac, char *av[] )
+int main( int ac, char *av[] )
 {
 	int	fd;
 	char	buf[BUFSIZ];
@@ -42,6 +42,7 @@ void main( int ac, char *av[] )
 		if ( write(fd, buf, strlen(buf)) == -1 )
 			break;
 	close( fd );
+	return 0;
 }
 
 char *

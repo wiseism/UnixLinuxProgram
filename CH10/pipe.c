@@ -14,7 +14,7 @@
 
 #define	oops(m,x)	{ perror(m); exit(x); }
 
-void main(int ac, char **av)
+int main(int ac, char **av)
 {
 	int	thepipe[2],			/* two file descriptors	*/
 		newfd,				/* useful for pipes	*/
@@ -58,4 +58,5 @@ void main(int ac, char **av)
 	close(thepipe[1]);		/* stdout is duped, close pipe	*/
 	execlp( av[1], av[1], NULL);
 	oops(av[1], 5);
+	return 0;
 }

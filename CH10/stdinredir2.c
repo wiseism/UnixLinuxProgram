@@ -11,7 +11,7 @@
 /* #define	CLOSE_DUP		/* open, close, dup, close */
 /* #define	USE_DUP2	/* open, dup2, close */
 
-void main()
+int main()
 {
 	int	fd ;
 	int	newfd;
@@ -42,4 +42,5 @@ void main()
 	fgets( line, 100, stdin ); printf("%s", line );
 	fgets( line, 100, stdin ); printf("%s", line );
 	fgets( line, 100, stdin ); printf("%s", line );
+	return 0;
 }

@@ -5,7 +5,7 @@
 #include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 
-void main( int ac, char *av[] )
+int main( int ac, char *av[] )
 {
 	int	i;
 
@@ -14,4 +14,5 @@ void main( int ac, char *av[] )
 		printf("args[%d] %s\n", i, av[i]);
 
 	fprintf(stderr,"This message is sent to stderr.\n");
+	return 0;
 }

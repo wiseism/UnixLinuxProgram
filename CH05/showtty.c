@@ -12,7 +12,7 @@ void show_some_flags( struct termios * );
 struct flaginfo;
 void show_flagset( int thevalue, struct flaginfo * );
 
-void main()
+int main()
 {
 	struct	termios ttyinfo;	/* this struct holds tty info */
 						
@@ -28,6 +28,7 @@ void main()
 			ttyinfo.c_cc[VKILL], ttyinfo.c_cc[VKILL]-1+'A');
 
 	show_some_flags( &ttyinfo );		/* show misc. flags	*/
+	return 0;
 }
 
 void showbaud( int thespeed )

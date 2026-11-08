@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <zconf.h>
 
-void main()
+int main()
 {
 	char	*arglist[3];
 
@@ -14,4 +14,5 @@ void main()
 	printf("* * * About to exec ls -l\n");
 	execvp( "ls" , arglist );
 	printf("* * * ls is done. bye\n");
+	return 0;
 }

@@ -14,7 +14,7 @@
 #define	READ	0
 #define	WRITE	1
 
-void main()
+int main()
 {
 	FILE	*fp;
 	char	buf[BUFSIZ];
@@ -22,6 +22,7 @@ void main()
 	fp = popen("ls","r");
 	while( fgets(buf, BUFSIZ,fp) != NULL)
 		fputs(buf, stdout);
+	return 0;
 }
 
 

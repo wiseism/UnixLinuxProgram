@@ -6,7 +6,7 @@
 
 extern char ** environ;
 
-void main()
+int main()
 {
 	char *table[3];
 
@@ -17,4 +17,5 @@ void main()
 	environ = table;			/* point to that table */
 
 	execlp("env", "env", NULL);		/* exec a program	*/
+	return 0;
 }
