@@ -19,7 +19,7 @@ int	col;	/* current column	*/
 int	dir;	/* where we are going	*/
 int	delay;	/* delay between moves	*/
 
-main()
+int main()
 {
 	int	ndelay;		/* new delay		*/
 	int	c;		/* user input		*/

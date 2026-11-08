@@ -8,7 +8,7 @@
 #include <signal.h>
 #define	INPUTLEN	100
 
-main()
+int main()
 {
 	struct sigaction newhandler;            /* new settings        */
 	sigset_t         blocked;               /* set of blocked sigs */

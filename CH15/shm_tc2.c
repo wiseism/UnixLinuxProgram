@@ -16,7 +16,7 @@
 #define oops(m,x)  { perror(m); exit(x); }
 union semun { int val ; struct semid_ds *buf ; ushort *array; };
 
-main()
+int main()
 {
 	int	seg_id;
 	char	*mem_ptr, *ctime();

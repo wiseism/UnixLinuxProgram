@@ -2,7 +2,7 @@
  * testbpd.c  - test bidirectional pipes
  */
 
-main()
+int main()
 {
 	int	p[2];
 

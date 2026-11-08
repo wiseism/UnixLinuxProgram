@@ -19,7 +19,7 @@ union semun { int val ; struct semid_ds *buf ; ushort *array; };
 int	seg_id, semset_id;			/* global for cleanup()	*/
 void	cleanup(int);
 
-main()
+int main()
 {
 	char	*mem_ptr, *ctime();
 	time_t	now;

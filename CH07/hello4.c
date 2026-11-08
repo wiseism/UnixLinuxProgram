@@ -4,7 +4,7 @@
 #include	<stdio.h>
 #include	<curses.h>
 
-main()
+int main()
 {
 	int	i;
 
