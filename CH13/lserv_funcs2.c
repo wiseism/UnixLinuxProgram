@@ -39,7 +39,7 @@ static char *do_validate();
 /****************************************************************************
  * setup() - initialize license server
  */
-void setup()
+int setup()
 {
 	sd = make_dgram_server_socket(SERVER_PORTNUM);
 	if ( sd == -1 )

@@ -9,7 +9,7 @@
 #include <netinet/in.h>
 #include <signal.h>
 #include <sys/errno.h>
-void setup();	/* 前向声明 */
+int setup();	/* 前向声明 */
 void handle_request(char *, struct sockaddr_in *, socklen_t);	/* 前向声明 */
 void narrate(char *, char *, struct sockaddr_in *);	/* 前向声明 */
 
