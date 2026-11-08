@@ -10,6 +10,10 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+int make_dgram_client_socket();	/* 前向声明 */
+int make_internet_address();	/* 前向声明 */
+void narrate(char *, char *);	/* 前向声明 */
+void syserr(char *);	/* 前向声明 */
 
 /*
  * Important variables used throughout
@@ -19,7 +23,7 @@ static int sd = -1;			/* Our communications socket */
 static struct sockaddr serv_addr;	/* Server address */	
 static socklen_t serv_alen;		/* length of address */
 static char ticket_buf[128];		/* Buffer to hold our ticket */
-static have_ticket = 0;			/* Set when we have a ticket */
+static int have_ticket = 0;			/* Set when we have a ticket */
 
 #define MSGLEN		128		/* Size of our datagrams */
 #define SERVER_PORTNUM	2020		/* Our server's port number */
