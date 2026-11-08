@@ -27,6 +27,8 @@ struct	propset {
 
 pthread_mutex_t mx = PTHREAD_MUTEX_INITIALIZER;
 
+int setup(int, char *[], struct propset *);	/* 定义的另一个函数 */
+
 int main(int ac, char *av[])
 {
 	int	       c;		/* user input		*/
