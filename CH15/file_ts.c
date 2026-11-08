@@ -16,7 +16,7 @@
 
 #define  oops(m,x)  { perror(m); exit(x); }
 
-lock_operation(int fd, int op)
+void lock_operation(int fd, int op)
 {
     struct flock lock;
 
