@@ -29,3 +29,7 @@ GitHub ubuntu-latest 迁移到 Ubuntu 26.04 后默认 GCC 为 14+，`-Wimplicit-
 | --- | --- |
 | 42440566747 (仅 cp1.c 修复) | failure（who0.c 等其余文件同问题） |
 | 本次推送触发 | 待填 |
+
+## 补充记录
+
+- 42440878827 复测失败新原因: `CH01/more01.c:16 for` 循环内初始声明需 C99+。C89 方案与 C99 特性冲突, 最终改为 C11 (CMAKE_C_STANDARD 11): 隐式 int 在 C11 下仅为警告, for 初始声明合法。
