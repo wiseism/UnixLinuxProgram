@@ -89,6 +89,8 @@ int main(int ac, char *av[])
        }
 }
 
+void sanitize(char *str);	/* 前向声明: main 在定义之前调用 */
+
 void sanitize(char *str)
 /*
  * it would be very bad if someone passed us an dirname like
