@@ -36,3 +36,7 @@ GitHub ubuntu-latest 迁移到 Ubuntu 26.04 后默认 GCC 为 14+，`-Wimplicit-
 
 ### 第3次复测(42442417022)失败原因
 - 原型此前被 append 到文件尾, 移动到 include 之后(bounce1d/bounce_async/bounce_aio)。
+
+## 最终结论
+
+- run 42476715292: ✅ **success**。C11 标准 + 全仓 K&R 显式化 + POSIX 头文件补齐。
