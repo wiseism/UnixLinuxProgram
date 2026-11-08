@@ -23,7 +23,9 @@ void process_rq(char *, int);	/* 前向声明 */
 void sanitize(char *);	/* 前向声明 */
 int built_in(char *, int);
 void do_ls(char *, int);
-void http_reply(int, FILE **, int, char *, char *, char *);	/* 前向声明 */
+void setup(pthread_attr_t *);
+int make_server_socket(int);	/* 前向声明 */
+int http_reply(int, FILE **, int, char *, char *, char *);
 int not_implemented(int);	/* 前向声明 */
 void do_404(char *, int);	/* 前向声明 */
 int isadir(char *);	/* 前向声明 */
@@ -37,7 +39,7 @@ time_t	 server_started ;
 int	 server_bytes_sent;
 int	 server_requests;
 
-main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	int 		sock, fd;
 	int		*fdptr;
@@ -71,7 +73,7 @@ main(int ac, char *av[])
  * initialize the status variables and
  * set the thread attribute to detached
  */
-setup(pthread_attr_t *attrp)
+void setup(pthread_attr_t *attrp)
 {
 	pthread_attr_init(attrp);
 	pthread_attr_setdetachstate(attrp,PTHREAD_CREATE_DETACHED);
@@ -178,7 +180,7 @@ int built_in(char *arg, int fd)
 	return 1;
 }
 
-void http_reply(int fd, FILE **fpp, int code, char *msg, char *type, char *content)
+int http_reply(int fd, FILE **fpp, int code, char *msg, char *type, char *content)
 {
 	FILE	*fp = fdopen(fd, "w");
 	int	bytes = 0;
