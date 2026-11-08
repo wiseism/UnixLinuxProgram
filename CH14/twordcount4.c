@@ -19,7 +19,7 @@ struct arg_set  *mailbox = NULL;
 pthread_mutex_t lock = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t  flag = PTHREAD_COND_INITIALIZER;
 
-main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	pthread_t      t1, t2;		/* two threads */
 	struct arg_set args1, args2;	/* two argsets */

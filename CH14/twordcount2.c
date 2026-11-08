@@ -11,7 +11,7 @@
 int	        total_words ;    /* the counter and its lock */
 pthread_mutex_t counter_lock = PTHREAD_MUTEX_INITIALIZER;
 
-main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	pthread_t t1, t2;		/* two threads */
 	void	  *count_words(void *);

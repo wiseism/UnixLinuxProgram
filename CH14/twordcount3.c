@@ -14,7 +14,7 @@ struct arg_set {		/* two values in one arg */
 		int  count;	/* number of words	 */
 };
 
-main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	pthread_t      t1, t2;		/* two threads */
 	struct arg_set args1, args2;	/* two argsets */
