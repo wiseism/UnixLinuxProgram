@@ -13,7 +13,7 @@
 #define  oops(m,x)  { perror(m); exit(x); }
 #define  BUFLEN 10
 
-lock_operation(int fd, int op)
+void lock_operation(int fd, int op)
 {
     struct flock lock;
 
@@ -26,7 +26,7 @@ lock_operation(int fd, int op)
     oops("lock operation", 6);
 }
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	int	fd, nread;
 	char	buf[BUFLEN];

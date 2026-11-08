@@ -30,4 +30,5 @@ void main()
 	printf("The time, direct from memory: ..%s", mem_ptr);
 
 	shmdt( mem_ptr );		/* detach, but not needed here */
+	return 0;
 }

@@ -29,7 +29,7 @@ lock_operation(int fd, int op)
     oops("lock operation", 6);
 }
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	int	fd;
 	time_t  now;
@@ -57,6 +57,7 @@ void main(int ac, char *av[])
 		lock_operation(fd, F_UNLCK);	/* unlock file	     */
 		sleep(1);			/* wait for new time */
 	}
+	return 0;
 }
 
 

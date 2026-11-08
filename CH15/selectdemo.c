@@ -27,7 +27,7 @@ void showdata(char *fname, int fd)
     write(1, "\n", 1);
 }
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	int    fd1, fd2;           /* the fds to watch      */
 	struct timeval timeout;    /* how long to wait      */
@@ -71,5 +71,6 @@ void main(int ac, char *av[])
 		else
 			printf("no input after %d seconds\n", atoi(av[3]));
 	}
+	return 0;
 }
 
