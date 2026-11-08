@@ -1,6 +1,10 @@
 /* rls.c - a client for a remote directory listing service
  *         usage: rls hostname directory
  */
+#include <arpa/inet.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/socket.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include       <stdio.h>
 #include       <sys/types.h>
 #include       <sys/socket.h>

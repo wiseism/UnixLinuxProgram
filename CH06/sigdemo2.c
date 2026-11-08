@@ -1,6 +1,7 @@
 /* sigdemo2.c - shows how to ignore a signal
  *            - press Ctrl-\ to kill this one
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <signal.h>

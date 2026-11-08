@@ -1,6 +1,8 @@
 /****************************************************************************
  * lclnt_funcs2.c: functions for the client of the license server version 2
  */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/socket.h>

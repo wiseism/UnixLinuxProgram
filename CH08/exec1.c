@@ -1,5 +1,6 @@
 /* exec1.c - shows how easy it is for a program to run a program
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include <stdio.h>
 #include <zconf.h>
 

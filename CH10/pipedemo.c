@@ -3,6 +3,9 @@
  *		  end, then runs around and reads from reading
  *		  end.  A little weird, but demonstrates the idea.
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 #include	<unistd.h>
 #include <stdlib.h>

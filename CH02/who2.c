@@ -2,6 +2,9 @@
  *         - suppresses empty records
  *         - formats time nicely
  */
+#include <fcntl.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include        <stdio.h>
 #include        <unistd.h>
 #include        <utmp.h>

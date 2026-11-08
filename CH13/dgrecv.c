@@ -3,6 +3,8 @@
  * 	         usage: dgrecv portnum 
  * 	        action: listens at the specfied port and reports messages
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdlib.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<stdlib.h>

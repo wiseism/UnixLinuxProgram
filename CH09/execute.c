@@ -1,4 +1,8 @@
 /* execute.c - code used by small shell to execute commands */
+#include <signal.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdlib.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/wait.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<stdlib.h>

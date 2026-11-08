@@ -22,6 +22,8 @@
  **				e. then close pipe and dc dies
  **                     * note: does not handle multiline answers
  **/
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 #include <zconf.h>
 #include <sys/wait.h>

@@ -1,4 +1,7 @@
 /* shm_ts.c : the time server using shared memory, a bizarre application  */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/shm.h>       /* 新版 GCC 隐式声明报错 */
+#include <time.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<sys/shm.h>

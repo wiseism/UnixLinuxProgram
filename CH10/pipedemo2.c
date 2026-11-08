@@ -2,6 +2,8 @@
  *		* Parent continues to write and read pipe,
  *		  but child also writes to the pipe
  */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 #include <zconf.h>
 #include <memory.h>

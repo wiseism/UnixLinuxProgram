@@ -6,6 +6,9 @@
  *	returns: 0=>yes, 1=>no, 2=>timeout
  *	 better: reset terminal mode on Interrupt
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 #include	<termios.h>
 #include	<fcntl.h>

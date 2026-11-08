@@ -2,6 +2,8 @@
  *		 - Version 4: condition variable allows counter
  *                            functions to report results early 
  */
+#include <pthread.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 
 #include  <stdio.h>
 #include  <pthread.h>

@@ -2,6 +2,7 @@
  * 	shows two more methods for redirecting standard input
  *	use #define to set one or the other
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include <stdio.h>
 #include <fcntl.h>
 #include <stdlib.h>

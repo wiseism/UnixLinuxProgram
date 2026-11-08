@@ -2,6 +2,7 @@
  *	shows how fork creates two processes, distinguishable
  *	by the different return values from fork()
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <zconf.h>

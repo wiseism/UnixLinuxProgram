@@ -15,6 +15,7 @@
  *
  */
 #include <stdio.h>
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 void show_info( struct utmp *utbufp )
 {

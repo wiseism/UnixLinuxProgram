@@ -1,5 +1,7 @@
 /* waitdemo1.c - shows how parent pauses until child finishes
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include <zconf.h>

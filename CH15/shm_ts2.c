@@ -2,6 +2,12 @@
  * program uses shared memory with key 99
  * program uses semaphore set with key 9900
  */
+#include <signal.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/sem.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/shm.h>       /* 新版 GCC 隐式声明报错 */
+#include <time.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<sys/shm.h>

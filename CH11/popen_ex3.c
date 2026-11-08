@@ -4,6 +4,7 @@
  *	two users.  Note how easy it is to use fprintf
  *	to format the data to send.
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 

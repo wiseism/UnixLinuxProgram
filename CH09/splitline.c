@@ -4,6 +4,7 @@
  *    char **splitline(char *str);           - parse a string
 
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<stdlib.h>

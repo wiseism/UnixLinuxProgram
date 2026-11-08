@@ -2,6 +2,11 @@
  * logfiled.c  - a simple logfile server using Unix Domain Datagram Sockets
  * 	         usage: logfiled >>logfilename
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/socket.h>       /* 新版 GCC 隐式声明报错 */
+#include <time.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<sys/types.h>

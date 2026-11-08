@@ -2,6 +2,7 @@
  *                allows a process to determine whether
  *                it is a child or process
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <zconf.h>

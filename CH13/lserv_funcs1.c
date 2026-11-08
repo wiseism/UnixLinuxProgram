@@ -2,6 +2,9 @@
  * lsrv_funcs1.c
  * functions for the license server
  */
+#include <arpa/inet.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <sys/types.h>

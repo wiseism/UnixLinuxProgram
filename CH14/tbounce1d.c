@@ -3,6 +3,10 @@
  *		other thread handles keyboard input
  *	compile	cc tbounce1d.c -lcurses -lpthread -o tbounce1d
  */
+#include <pthread.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdlib.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<curses.h>

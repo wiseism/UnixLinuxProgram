@@ -1,4 +1,6 @@
 /* twordcount2.c - threaded word counter for two files.	   */
+#include <pthread.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 /*                 version 2: uses mutex to lock counter   */
 
 #include  <stdio.h>

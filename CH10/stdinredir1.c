@@ -5,6 +5,7 @@
  *		 closes fd 0, opens a disk file, then reads in
  *		 three more lines from standard input
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <fcntl.h>

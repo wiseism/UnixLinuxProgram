@@ -7,6 +7,7 @@
  *             has many other weaknesses, but is a good start
  *      build: cc webserv.c socklib.c -o webserv
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/stat.h>

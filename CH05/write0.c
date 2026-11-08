@@ -6,6 +6,10 @@
  *	  shows: a terminal is just a file supporting regular i/o
  *	  usage: write0 ttyname
  */
+#include <fcntl.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<fcntl.h>

@@ -6,6 +6,7 @@
  *           supports a special status URL to report internal state
  * building: cc twebserv.c socklib.c -lpthread -o twebserv
  */
+#include <sys/socket.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <sys/types.h>

@@ -4,6 +4,8 @@
  *		keyboard sends SIGIO, main only calls pause()
  *	compile cc bounce_aio.c set_ticker.c -lrt  -lcurses -o bounce_aio
  */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include <stdio.h>
 #include <curses.h>
 #include <signal.h>

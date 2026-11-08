@@ -1,5 +1,6 @@
 #include <zconf.h>
 #include <stdio.h>
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 //#include <caca_conio.h>
 
 /* forkdemo2.c - shows how child processes pick up at the return

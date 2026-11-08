@@ -5,6 +5,7 @@
  **			shell waits around to perform another command
  **		New problem: shell catches signals.  Run vi, press ^c.
  **/
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <sys/wait.h>       /* 需要 wait(); 新版 GCC 隐式声明报错 */

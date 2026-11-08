@@ -7,6 +7,7 @@
  *	to do   needs locks for shared variables
  *	        nice to put screen handling in its own thread
  */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <curses.h>

@@ -4,6 +4,10 @@
 #include	<signal.h>
 #include	<sys/wait.h>
 #include	"varlib.h"
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/wait.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdlib.h>       /* 新版 GCC 隐式声明报错 */
+#include <signal.h>       /* 新版 GCC 隐式声明报错 */
 /* execute2.c - includes environmment handling */
 
 int execute(char *argv[])

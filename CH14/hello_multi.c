@@ -1,4 +1,6 @@
 /* hello_multi.c - a multi-threaded hello world program */
+#include <pthread.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 
 #include  <stdio.h>
 #include  <pthread.h>

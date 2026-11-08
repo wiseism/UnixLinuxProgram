@@ -12,6 +12,7 @@
  *					returns a connected socket
  *					or -1 if error
  */ 
+#include <arpa/inet.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <unistd.h>

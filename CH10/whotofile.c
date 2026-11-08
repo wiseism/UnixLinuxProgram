@@ -2,6 +2,7 @@
  *	purpose: show how to redirect output for another program
  *	   idea: fork, then in the child, redirect output, then exec
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 #include <stdio.h>
 #include <zconf.h>
 #include <stdlib.h>

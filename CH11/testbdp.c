@@ -1,6 +1,9 @@
 /*
  * testbpd.c  - test bidirectional pipes
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdlib.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 int main()
 {

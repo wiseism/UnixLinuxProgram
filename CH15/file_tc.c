@@ -2,6 +2,7 @@
  *     usage: file_tc filename 
  *      uses: fcntl()-based locking 
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <sys/file.h>

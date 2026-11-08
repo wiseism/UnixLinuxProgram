@@ -2,6 +2,7 @@
  *              print the number of command line args, list the args,
  *		then print a message to stderr
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 
 void main( int ac, char *av[] )

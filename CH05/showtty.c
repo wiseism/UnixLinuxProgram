@@ -1,6 +1,7 @@
 /* showtty.c
  *	displays some current tty settings
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<termios.h>

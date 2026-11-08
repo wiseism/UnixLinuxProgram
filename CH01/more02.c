@@ -2,6 +2,7 @@
  *	read and print 24 lines then pause for a few special commands
  *      feature of version 0.2: reads from /dev/tty for commands
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 #include <stdlib.h>
 

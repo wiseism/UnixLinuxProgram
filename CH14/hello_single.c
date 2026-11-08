@@ -1,4 +1,5 @@
 /* hello_single.c - a single threaded hello world program */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 
 #include  <stdio.h>
 #include <zconf.h>

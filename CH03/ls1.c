@@ -2,6 +2,7 @@
  **   purpose  list contents of directory or directories
  **   action   if no args, use .  else list files in args
  **/
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
 #include	<stdio.h>
 #include	<sys/types.h>
 #include	<dirent.h>

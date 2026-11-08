@@ -2,6 +2,9 @@
  * logfilec.c - logfile client - send messages to the logfile server
  *              usage: logfilec "a message here"
  */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/socket.h>       /* 新版 GCC 隐式声明报错 */
 
 #include	<stdio.h>
 #include	<sys/types.h>

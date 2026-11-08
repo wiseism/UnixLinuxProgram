@@ -1,5 +1,9 @@
 /* rlsd.c - a remote ls server - with paranoia
  */
+#include <arpa/inet.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <sys/socket.h>       /* 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include  <stdio.h>
 #include  <unistd.h>

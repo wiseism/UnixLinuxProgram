@@ -3,6 +3,7 @@
  * License server client version 1
  *  link with lclnt_funcs1.o dgram.o
  */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
 
 #include <stdio.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */

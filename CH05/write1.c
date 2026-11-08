@@ -2,6 +2,10 @@
 #include	<fcntl.h>
 #include	<utmp.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+#include <unistd.h>       /* 新版 GCC 隐式声明报错 */
+#include <string.h>       /* 新版 GCC 隐式声明报错 */
+#include <stdio.h>       /* 新版 GCC 隐式声明报错 */
+#include <fcntl.h>       /* 新版 GCC 隐式声明报错 */
 
 /*
  * write1.c
