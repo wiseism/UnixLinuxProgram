@@ -7,8 +7,13 @@
 
 #include <stdio.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+void setup();	/* 前向声明 */
+int get_ticket();	/* 前向声明 */
+void do_regular_work();	/* 前向声明 */
+void release_ticket();	/* 前向声明 */
+void shut_down();	/* 前向声明 */
 
-int main(int ac, char *av[])
+int int main(int ac, char *av[])
 {
 	setup();
 	if (get_ticket() != 0 )
