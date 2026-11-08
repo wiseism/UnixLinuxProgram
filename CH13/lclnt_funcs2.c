@@ -34,7 +34,7 @@ char *do_transaction();
  * RET     nothing, dies on error
  * notes:  assumes server is on same host as client
  */
-setup()
+void setup()
 {
 	char	hostname[BUFSIZ];
 
@@ -47,7 +47,7 @@ setup()
 	serv_alen = sizeof(serv_addr);
 }
 
-shut_down()
+void shut_down()
 {
 	close(sd);
 }
@@ -158,11 +158,11 @@ char *do_transaction(char *msg)
  * IN msg1, msg2 : strings to print along with pid and title
  * RET     nothing, dies on error
  */
-narrate(char *msg1, char *msg2)
+void narrate(char *msg1, char *msg2)
 {
 	fprintf(stderr,"CLIENT [%d]: %s %s\n", pid, msg1, msg2);
 }
-syserr(char *msg1)
+void syserr(char *msg1)
 {
 	char	buf[MSGLEN];
 	sprintf(buf,"CLIENT [%d]: %s", pid, msg1);

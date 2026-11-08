@@ -34,7 +34,7 @@ char *do_goodbye();
 /****************************************************************************
  * setup() - initialize license server
  */
-setup()
+void setup()
 {
 	sd = make_dgram_server_socket(SERVER_PORTNUM);
 	if ( sd == -1 )
@@ -42,7 +42,7 @@ setup()
 	free_all_tickets();
 	return sd;
 }
-free_all_tickets()
+void free_all_tickets()
 {
 	int	i;
 
@@ -53,7 +53,7 @@ free_all_tickets()
 /****************************************************************************
  * shut_down() - close down license server
  */
-shut_down()
+void shut_down()
 {
 	close(sd);
 }
@@ -62,7 +62,7 @@ shut_down()
  * handle_request(request, clientaddr, addrlen)
  *   branch on code in request
  */
-handle_request(char *req,struct sockaddr_in *client, socklen_t addlen)
+void handle_request(char *req,struct sockaddr_in *client, socklen_t addlen)
 {
 	char	*response;
 	int	ret;
@@ -150,7 +150,7 @@ char *do_goodbye(char *msg_p)
 /****************************************************************************
  * narrate() - chatty news for debugging and logging purposes
  */
-narrate(char *msg1, char *msg2, struct sockaddr_in *clientp)
+void narrate(char *msg1, char *msg2, struct sockaddr_in *clientp)
 {
 	fprintf(stderr,"\t\tSERVER: %s %s ", msg1, msg2);
 	if ( clientp )

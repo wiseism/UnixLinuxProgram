@@ -52,7 +52,7 @@ void main(int ac, char *av[])
    skip over all request info until a CRNL is seen
    ------------------------------------------------------ */
 
-read_til_crnl(FILE *fp)
+void read_til_crnl(FILE *fp)
 {
 	char	buf[BUFSIZ];
 	while( fgets(buf,BUFSIZ,fp) != NULL && strcmp(buf,"\r\n") != 0 )
@@ -66,7 +66,7 @@ read_til_crnl(FILE *fp)
    rq is HTTP command:  GET /foo/bar.html HTTP/1.0
    ------------------------------------------------------ */
 
-process_rq( char *rq, int fd )
+void process_rq( char *rq, int fd )
 {
 	char	cmd[BUFSIZ], arg[BUFSIZ];
 
@@ -95,7 +95,7 @@ process_rq( char *rq, int fd )
    if content_type is NULL then don't send content type
    ------------------------------------------------------ */
 
-header( FILE *fp, char *content_type )
+void header( FILE *fp, char *content_type )
 {
 	fprintf(fp, "HTTP/1.0 200 OK\r\n");
 	if ( content_type )
@@ -108,7 +108,7 @@ header( FILE *fp, char *content_type )
     and do_404(item,fd)     no such object
    ------------------------------------------------------ */
 
-cannot_do(int fd)
+void cannot_do(int fd)
 {
 	FILE	*fp = fdopen(fd,"w");
 
@@ -120,7 +120,7 @@ cannot_do(int fd)
 	fclose(fp);
 }
 
-do_404(char *item, int fd)
+void do_404(char *item, int fd)
 {
 	FILE	*fp = fdopen(fd,"w");
 
@@ -145,13 +145,13 @@ isadir(char *f)
 	return ( stat(f, &info) != -1 && S_ISDIR(info.st_mode) );
 }
 
-not_exist(char *f)
+void not_exist(char *f)
 {
 	struct stat info;
 	return( stat(f,&info) == -1 );
 }
 
-do_ls(char *dir, int fd)
+void do_ls(char *dir, int fd)
 {
 	FILE	*fp ;
 
@@ -182,12 +182,12 @@ char * file_type(char *f)
 	return "";
 }
 
-ends_in_cgi(char *f)
+void ends_in_cgi(char *f)
 {
 	return ( strcmp( file_type(f), "cgi" ) == 0 );
 }
 
-do_exec( char *prog, int fd )
+void do_exec( char *prog, int fd )
 {
 	FILE	*fp ;
 
@@ -205,7 +205,7 @@ do_exec( char *prog, int fd )
    sends back contents after a header
    ------------------------------------------------------ */
 
-do_cat(char *f, int fd)
+void do_cat(char *f, int fd)
 {
 	char	*extension = file_type(f);
 	char	*content = "text/plain";
