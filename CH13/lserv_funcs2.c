@@ -16,6 +16,7 @@
 #include <sys/errno.h>
 #include <zconf.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+int make_dgram_server_socket(int);	/* 前向声明 */
 
 #define SERVER_PORTNUM	2020		/* Our server's port number */
 #define MSGLEN		128		/* Size of our datagrams */
