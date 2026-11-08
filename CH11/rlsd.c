@@ -21,6 +21,8 @@
 #define   HOSTLEN  256
 #define   oops(msg)      { perror(msg) ; exit(1) ; }
 
+void sanitize(char *str);	/* 前向声明: main 内在定义之前调用 */
+
 int main(int ac, char *av[])
 {
 	struct  sockaddr_in   saddr;   /* build our address here */
@@ -88,8 +90,6 @@ int main(int ac, char *av[])
 	       fclose(sock_fpi);
        }
 }
-
-void sanitize(char *str);	/* 前向声明: main 在定义之前调用 */
 
 void sanitize(char *str)
 /*
