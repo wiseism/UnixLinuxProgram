@@ -19,6 +19,15 @@
 
 #include <dirent.h>
 #include <time.h>
+void process_rq(char *, int);	/* 前向声明 */
+void sanitize(char *);	/* 前向声明 */
+void built_in(char *, int);	/* 前向声明 */
+void not_implemented(int);	/* 前向声明 */
+void do_404(char *, int);	/* 前向声明 */
+int isadir(char *);	/* 前向声明 */
+int not_exist(char *);	/* 前向声明 */
+void do_cat(char *, int);	/* 前向声明 */
+void do_exec(char *, int);	/* 前向声明 */
 
 /* server facts here */
 
@@ -106,7 +115,7 @@ skip_rest_of_header(FILE *fp)
    handles request in a new process
    rq is HTTP command:  GET /foo/bar.html HTTP/1.0
    ------------------------------------------------------ */
-process_rq( char *rq, int fd)
+void process_rq( char *rq, int fd)
 {
 	char	cmd[BUFSIZ], arg[BUFSIZ];
 
@@ -129,7 +138,7 @@ process_rq( char *rq, int fd)
 /*
  * make sure all paths are below the current directory
  */
-sanitize(char *str)
+void sanitize(char *str)
 {
 	char	*src, *dest;
 
@@ -152,7 +161,7 @@ sanitize(char *str)
 }
 
 /* handle built-in URLs here.  Only one so far is "status" */
-built_in(char *arg, int fd)
+void built_in(char *arg, int fd)
 {
 	FILE	*fp;
 
@@ -191,13 +200,13 @@ http_reply(int fd, FILE **fpp, int code, char *msg, char *type, char *content)
         not_implemented(fd)      unimplemented HTTP command
         and do_404(item,fd)     no such object
    ------------------------------------------------------ */
-not_implemented(int fd)
+void not_implemented(int fd)
 {
 	http_reply(fd,NULL,501,"Not Implemented","text/plain",
 			"That command is not implemented");
 }
 
-do_404(char *item, int fd)
+void do_404(char *item, int fd)
 {
 	http_reply(fd,NULL,404,"Not Found","text/plain",
 			"The item you seek is not here");
@@ -207,13 +216,13 @@ do_404(char *item, int fd)
    the directory listing section
    isadir() uses stat, not_exist() uses stat
    ------------------------------------------------------ */
-isadir(char *f)
+int isadir(char *f)
 {
 	struct stat info;
 	return ( stat(f, &info) != -1 && S_ISDIR(info.st_mode) );
 }
 
-not_exist(char *f)
+int not_exist(char *f)
 {
 	struct stat info;
 	return( stat(f,&info) == -1 );
@@ -253,7 +262,7 @@ char * file_type(char *f)
 
 /* do_cat(filename,fd): sends header then the contents */
 
-do_cat(char *f, int fd)
+void do_cat(char *f, int fd)
 {
 	char	*extension = file_type(f);
 	char	*type = "text/plain";
