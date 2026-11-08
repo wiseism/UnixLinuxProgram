@@ -19,7 +19,8 @@
 
 #include <dirent.h>
 #include <time.h>
-void process_rq(char *, int);	/* 前向声明 */
+void process_rq(char *, int);
+void skip_rest_of_header(FILE *);	/* 前向声明 */
 void sanitize(char *);	/* 前向声明 */
 int built_in(char *, int);
 void do_ls(char *, int);
@@ -232,7 +233,7 @@ int not_exist(char *f)
 	return( stat(f,&info) == -1 );
 }
 
-do_ls(char *dir, int fd)
+void do_ls(char *dir, int fd)
 {
 	DIR	      *dirptr;
 	struct dirent *direntp;
