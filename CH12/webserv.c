@@ -14,8 +14,18 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sys/socket.h>
+int ends_in_cgi(char *f);	/* 前向声明 */
+void read_til_crnl(FILE *fp);	/* 前向声明 */
+void process_rq( char *rq, int fd );	/* 前向声明 */
+void cannot_do(int fd);	/* 前向声明 */
+int not_exist(char *f);	/* 前向声明 */
+void do_404(char *item, int fd);	/* 前向声明 */
+int isadir(char *f);	/* 前向声明 */
+void do_ls(char *dir, int fd);	/* 前向声明 */
+void do_exec( char *prog, int fd );	/* 前向声明 */
+int make_server_socket(int, int);	/* 前向声明 */
 
-void main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	int 	sock, fd;
 	FILE	*fpin;
@@ -182,7 +192,7 @@ char * file_type(char *f)
 	return "";
 }
 
-void ends_in_cgi(char *f)
+int ends_in_cgi(char *f)
 {
 	return ( strcmp( file_type(f), "cgi" ) == 0 );
 }
