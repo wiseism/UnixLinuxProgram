@@ -13,8 +13,8 @@
 #include	<sys/ipc.h>
 #include	<sys/sem.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
-int wait_and_lock(void);	/* 前向声明 */
-int release_lock(void);	/* 前向声明 */
+int wait_and_lock(int);	/* 前向声明 */
+int release_lock(int);	/* 前向声明 */
 
 #define	TIME_MEM_KEY	99		/* kind of like a port number */
 #define	TIME_SEM_KEY	9900		/* like a filename	      */
@@ -57,7 +57,7 @@ int main()
  * build and execute a 2-element action set: 
  *    wait for 0 on n_writers AND increment n_readers
  */
-wait_and_lock( int semset_id )
+int wait_and_lock( int semset_id )
 {
 	union semun   sem_info;         /* some properties      */
 	struct sembuf actions[2];	/* action set		*/
@@ -78,7 +78,7 @@ wait_and_lock( int semset_id )
  * build and execute a 1-element action set:
  *    decrement num_readers
  */
-release_lock( int semset_id )
+int release_lock( int semset_id )
 {
 	union semun   sem_info;         /* some properties      */
 	struct sembuf actions[1];	/* action set		*/
