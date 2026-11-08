@@ -23,7 +23,8 @@ void do_404(char *item, int fd);	/* 前向声明 */
 int isadir(char *f);	/* 前向声明 */
 void do_ls(char *dir, int fd);	/* 前向声明 */
 void do_exec( char *prog, int fd );	/* 前向声明 */
-int make_server_socket(int, int);	/* 前向声明 */
+int make_server_socket(int);	/* 前向声明: socklib 中为单参包装 */
+void do_cat( char *arg, int fd );	/* 前向声明 */
 
 int main(int ac, char *av[])
 {
