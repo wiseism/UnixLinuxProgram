@@ -16,6 +16,7 @@
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
 #include <stdlib.h>       /* 新版 GCC 隐式声明报错 */
 #include <ctype.h>       /* 新版 GCC 隐式声明报错 */
+#include <strings.h>       /* 需要 bzero/bcopy; 新版 GCC 隐式声明报错 */
 
 #define   PORTNUM  15000   /* our remote ls server port */
 #define   HOSTLEN  256

@@ -24,6 +24,7 @@
 #include	<netdb.h>
 #include	<time.h>
 #include	<strings.h>
+#include <strings.h>       /* 需要 bzero/bcopy; 新版 GCC 隐式声明报错 */
 
 #define   HOSTLEN  256
 #define	  BACKLOG  1

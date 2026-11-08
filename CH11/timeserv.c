@@ -15,6 +15,7 @@
 #include  <time.h>
 #include  <strings.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+#include <strings.h>       /* 需要 bzero/bcopy; 新版 GCC 隐式声明报错 */
 
 #define   PORTNUM  13000   /* our time service phone number */
 #define   HOSTLEN  256

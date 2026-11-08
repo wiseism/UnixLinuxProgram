@@ -10,10 +10,11 @@
 #include       <netinet/in.h>
 #include       <netdb.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+#include <strings.h>       /* 需要 bzero/bcopy; 新版 GCC 隐式声明报错 */
 
 #define        oops(msg)       { perror(msg); exit(1); }
 
-main(int ac, char *av[])
+int main(int ac, char *av[])
 {
 	struct sockaddr_in  servadd;        /* the number to call */
 	struct hostent      *hp;            /* used to get number */

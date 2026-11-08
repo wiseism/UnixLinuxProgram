@@ -11,6 +11,7 @@
 #include       <netinet/in.h>
 #include       <netdb.h>
 #include <stdlib.h>       /* 需要 exit(); 新版 GCC 隐式声明报错 */
+#include <strings.h>       /* 需要 bzero/bcopy; 新版 GCC 隐式声明报错 */
 
 #define        oops(msg)       { perror(msg); exit(1); }
 #define		PORTNUM		15000
