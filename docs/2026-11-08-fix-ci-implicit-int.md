@@ -28,7 +28,7 @@ GitHub ubuntu-latest 迁移到 Ubuntu 26.04 后默认 GCC 为 14+，`-Wimplicit-
 | run id | 结果 |
 | --- | --- |
 | 42440566747 (仅 cp1.c 修复) | failure（who0.c 等其余文件同问题） |
-| 本次推送触发 | 待填 |
+| 42477055453 | ✅ success |
 
 ## 补充记录
 
